@@ -1,5 +1,6 @@
 import { Lock, User } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
+import LogoCarousel from "./LogoCarousel";
 
 const speakers = [
   { id: 1, label: "TikTok Shop" },
@@ -37,6 +38,10 @@ const SpeakersSection = () => (
           </AnimatedSection>
         ))}
       </div>
+
+      <AnimatedSection delay={0.4}>
+        <LogoCarousel />
+      </AnimatedSection>
     </div>
   </section>
 );
