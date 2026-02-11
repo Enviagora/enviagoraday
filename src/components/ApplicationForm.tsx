@@ -36,7 +36,7 @@ const ApplicationForm = () => {
   };
 
   return (
-    <section id="formulario" className="relative py-24 md:py-32">
+    <section id="formulario" className="relative py-24 md:py-0">
       <div className="container mx-auto px-6">
         <AnimatedSection className="mx-auto max-w-xl text-center">
           <p className="mb-3 font-sans text-xs font-medium uppercase tracking-[0.3em] text-muted-foreground">
@@ -60,8 +60,8 @@ const ApplicationForm = () => {
                 placeholder="Seu nome"
                 value={form.nome}
                 onChange={(e) => handleChange("nome", e.target.value)}
-                className="border-white/10 bg-white/5 text-foreground placeholder:text-muted-foreground/50 focus:border-silver/40 focus:ring-silver/20"
-              />
+                className="border-white/10 bg-white/5 text-foreground placeholder:text-muted-foreground/50 focus:border-silver/40 focus:ring-silver/20" />
+
             </div>
 
             <div className="space-y-2">
@@ -72,8 +72,8 @@ const ApplicationForm = () => {
                 placeholder="seu@empresa.com.br"
                 value={form.email}
                 onChange={(e) => handleChange("email", e.target.value)}
-                className="border-white/10 bg-white/5 text-foreground placeholder:text-muted-foreground/50 focus:border-silver/40 focus:ring-silver/20"
-              />
+                className="border-white/10 bg-white/5 text-foreground placeholder:text-muted-foreground/50 focus:border-silver/40 focus:ring-silver/20" />
+
             </div>
 
             <div className="space-y-2">
@@ -83,8 +83,8 @@ const ApplicationForm = () => {
                 placeholder="(11) 99999-9999"
                 value={form.whatsapp}
                 onChange={(e) => handleChange("whatsapp", e.target.value)}
-                className="border-white/10 bg-white/5 text-foreground placeholder:text-muted-foreground/50 focus:border-silver/40 focus:ring-silver/20"
-              />
+                className="border-white/10 bg-white/5 text-foreground placeholder:text-muted-foreground/50 focus:border-silver/40 focus:ring-silver/20" />
+
             </div>
 
             <div className="space-y-2">
@@ -94,27 +94,27 @@ const ApplicationForm = () => {
                 placeholder="Empresa S/A"
                 value={form.empresa}
                 onChange={(e) => handleChange("empresa", e.target.value)}
-                className="border-white/10 bg-white/5 text-foreground placeholder:text-muted-foreground/50 focus:border-silver/40 focus:ring-silver/20"
-              />
+                className="border-white/10 bg-white/5 text-foreground placeholder:text-muted-foreground/50 focus:border-silver/40 focus:ring-silver/20" />
+
             </div>
 
             <button
               type="submit"
               disabled={loading}
-              className="btn-silver w-full text-base font-bold tracking-wide disabled:opacity-50 flex items-center justify-center gap-2"
-            >
-              {loading ? "Enviando..." : (
-                <>
+              className="btn-silver w-full text-base font-bold tracking-wide disabled:opacity-50 flex items-center justify-center gap-2">
+
+              {loading ? "Enviando..." :
+              <>
                   <Send className="h-4 w-4" />
                   Enviar Solicitação
                 </>
-              )}
+              }
             </button>
           </form>
         </AnimatedSection>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default ApplicationForm;

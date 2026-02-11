@@ -1,8 +1,8 @@
 import AnimatedSection from "./AnimatedSection";
 import heroImage from "@/assets/hero-aviation.jpg";
 
-const AboutSection = () => (
-  <section className="relative py-24 md:py-32">
+const AboutSection = () =>
+<section className="relative py-24 md:py-0">
     <div className="container mx-auto px-6">
       <div className="glow-line mb-16" />
       <div className="grid gap-12 md:grid-cols-2 md:gap-16 items-center">
@@ -28,16 +28,16 @@ const AboutSection = () => (
         <AnimatedSection delay={0.2}>
           <div className="glass-card overflow-hidden">
             <img
-              src={heroImage}
-              alt="Interior do hangar de aviação executiva com jato privado"
-              className="h-full w-full object-cover aspect-[16/10]"
-              loading="lazy"
-            />
+            src={heroImage}
+            alt="Interior do hangar de aviação executiva com jato privado"
+            className="h-full w-full object-cover aspect-[16/10]"
+            loading="lazy" />
+
           </div>
         </AnimatedSection>
       </div>
     </div>
-  </section>
-);
+  </section>;
+
 
 export default AboutSection;
