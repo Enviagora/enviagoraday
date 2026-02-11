@@ -1,4 +1,4 @@
-import logoEnviagoraDay from "@/assets/logo-enviagora-day.png";
+import logoEnviagoraDay from "@/assets/logo-enviagora-day-nobg.png";
 
 const Header = () => {
   return (
