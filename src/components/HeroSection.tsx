@@ -76,7 +76,7 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.15 }}
           transition={{ duration: 1, delay: 1.5 }}
-          className="mt-20 flex justify-center gap-1 my-[40px]">
+          className="mt-20 flex justify-center gap-1 my-0">
 
           {[0, 1, 2].map((i) =>
           <svg key={i} width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-silver">

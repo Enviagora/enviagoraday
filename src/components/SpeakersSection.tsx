@@ -42,7 +42,7 @@ const SpeakersSection = () =>
           </AnimatedSection>
       )}
         <AnimatedSection delay={speakers.length * 0.1}>
-          <div className="glass-card flex flex-col items-center justify-center p-6 text-center transition-all duration-300 hover:border-white/20 hover:shadow-[0_0_30px_rgba(199,210,224,0.08)] group">
+          <div className="glass-card flex flex-col items-center justify-center p-6 text-center transition-all duration-300 hover:border-white/20 hover:shadow-[0_0_30px_rgba(199,210,224,0.08)] group py-[14px]">
             <div className="mb-4 flex h-24 w-24 items-center justify-center rounded-full border border-white/10">
               <HelpCircle className="h-12 w-12 text-muted-foreground" />
             </div>
