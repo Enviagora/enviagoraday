@@ -10,14 +10,14 @@ const Header = () => {
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
         <div className="flex items-center gap-2">
           <Plane className="h-5 w-5 text-silver rotate-[-30deg]" />
-          <span className="font-display text-lg font-bold tracking-wider text-foreground">ENVIAGORA</span>
+          <span className="font-display text-lg font-bold tracking-wider text-foreground">
+          </span>
         </div>
         <button onClick={scrollToForm} className="btn-outline-silver text-sm">
           Solicitar Convite
         </button>
       </div>
-    </header>
-  );
+    </header>);
 };
 
 export default Header;
