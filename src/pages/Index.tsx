@@ -9,8 +9,8 @@ const Index = () => (
   <div className="bg-page-gradient min-h-screen">
     <Header />
     <HeroSection />
-    <AboutSection />
     <SpeakersSection />
+    <AboutSection />
     <ApplicationForm />
     <Footer />
   </div>
