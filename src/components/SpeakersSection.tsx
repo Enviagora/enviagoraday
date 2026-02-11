@@ -2,7 +2,7 @@ import { Lock, User } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 
 const speakers = [
-  { id: 1, label: "Keynote Speaker" },
+  { id: 1, label: "TikTok Shop" },
   { id: 2, label: "Painel Logística" },
   { id: 3, label: "Painel E-commerce" },
   { id: 4, label: "Encerramento" },
