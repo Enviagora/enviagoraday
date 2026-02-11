@@ -66,8 +66,8 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 1.1 }}
           className="mt-12">
 
-          <button onClick={scrollToForm} className="btn-silver text-base font-bold tracking-wide">
-            Quero participar da seleção
+          <button onClick={scrollToForm} className="btn-silver text-base tracking-wide font-thin font-mono text-center">
+            CONFIRMAR PRESENÇA 
           </button>
         </motion.div>
 
