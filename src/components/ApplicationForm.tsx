@@ -21,18 +21,32 @@ const ApplicationForm = () => {
     setForm((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.nome || !form.email || !form.whatsapp || !form.empresa) {
       toast.error("Preencha todos os campos.");
       return;
     }
     setLoading(true);
-    setTimeout(() => {
+    try {
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycby1hzDNGvhqHKkZjrU4fhFWn2gqqehmYrBHmT5XVqipd0OkotbIhipOx5jKvwo10R_E/exec",
+        {
+          method: "POST",
+          body: JSON.stringify(form),
+        }
+      );
+      if (response.ok) {
+        toast.success("Solicitação enviada! Entraremos em contato em breve.");
+        setForm({ nome: "", email: "", whatsapp: "", empresa: "" });
+      } else {
+        toast.error("Erro ao enviar. Tente novamente.");
+      }
+    } catch (error) {
+      toast.error("Erro ao enviar. Tente novamente.");
+    } finally {
       setLoading(false);
-      toast.success("Solicitação enviada! Entraremos em contato em breve.");
-      setForm({ nome: "", email: "", whatsapp: "", empresa: "" });
-    }, 1500);
+    }
   };
 
   return (
