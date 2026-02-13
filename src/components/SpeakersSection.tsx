@@ -29,7 +29,6 @@ const SpeakersSection = () => {
 
   return (
     <section className="relative py-28 md:py-40 overflow-hidden">
-      {/* Ambient glow behind the section */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px]" />
       </div>
@@ -45,18 +44,18 @@ const SpeakersSection = () => {
         </AnimatedSection>
 
         <AnimatedSection delay={0.15}>
-          <div className="relative mx-auto max-w-xl">
+          <div className="relative mx-auto max-w-2xl">
             {/* Navigation buttons */}
             <button
               onClick={prev}
-              className="absolute -left-4 md:-left-20 top-1/2 -translate-y-1/2 z-10 flex h-14 w-14 items-center justify-center rounded-full border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-300 hover:border-primary/30 hover:bg-white/10 hover:shadow-[0_0_30px_rgba(199,210,224,0.15)] hover:scale-110"
+              className="absolute -left-4 md:-left-20 top-1/2 -translate-y-1/2 z-20 flex h-14 w-14 items-center justify-center rounded-full border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-300 hover:border-primary/30 hover:bg-white/10 hover:shadow-[0_0_30px_rgba(199,210,224,0.15)] hover:scale-110"
               aria-label="Palestrante anterior"
             >
               <ChevronLeft className="h-6 w-6 text-foreground" />
             </button>
             <button
               onClick={next}
-              className="absolute -right-4 md:-right-20 top-1/2 -translate-y-1/2 z-10 flex h-14 w-14 items-center justify-center rounded-full border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-300 hover:border-primary/30 hover:bg-white/10 hover:shadow-[0_0_30px_rgba(199,210,224,0.15)] hover:scale-110"
+              className="absolute -right-4 md:-right-20 top-1/2 -translate-y-1/2 z-20 flex h-14 w-14 items-center justify-center rounded-full border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-300 hover:border-primary/30 hover:bg-white/10 hover:shadow-[0_0_30px_rgba(199,210,224,0.15)] hover:scale-110"
               aria-label="Próximo palestrante"
             >
               <ChevronRight className="h-6 w-6 text-foreground" />
@@ -66,9 +65,9 @@ const SpeakersSection = () => {
             <AnimatePresence mode="wait">
               <motion.div
                 key={speaker.id}
-                initial={{ opacity: 0, scale: 0.92, y: 20 }}
+                initial={{ opacity: 0, scale: 0.95, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.92, y: -20 }}
+                exit={{ opacity: 0, scale: 0.95, y: -20 }}
                 transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               >
                 {isMystery ? (
@@ -76,33 +75,42 @@ const SpeakersSection = () => {
                     href="https://www.instagram.com/enviagoraday/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group relative flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.08] to-white/[0.02] backdrop-blur-xl px-10 py-20 text-center transition-all duration-500 hover:border-primary/20 hover:shadow-[0_0_60px_rgba(199,210,224,0.1)]"
+                    className="group relative block aspect-[4/5] w-full overflow-hidden rounded-3xl bg-card transition-all duration-500"
                   >
-                    <div className="relative mb-8">
-                      <div className="absolute inset-0 rounded-full bg-primary/10 blur-2xl scale-125" />
-                      <div className="relative flex h-48 w-48 md:h-60 md:w-60 items-center justify-center rounded-full border border-white/10 bg-white/[0.03]">
-                        <HelpCircle className="h-24 w-24 text-muted-foreground/60 group-hover:text-primary/60 transition-colors duration-500" />
-                      </div>
+                    <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-white/[0.04] to-white/[0.01]">
+                      <HelpCircle className="h-32 w-32 text-muted-foreground/30 group-hover:text-primary/40 transition-colors duration-500" />
                     </div>
-                    <p className="text-2xl md:text-3xl font-bold text-foreground tracking-tight">Novos palestrantes</p>
-                    <p className="mt-2 text-base text-muted-foreground">Siga @enviagoraday para descobrir</p>
+                    {/* Bottom vignette overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10">
+                      <p className="text-2xl md:text-3xl font-bold text-foreground tracking-tight">
+                        Novos palestrantes
+                      </p>
+                      <p className="mt-2 text-base text-muted-foreground">
+                        Siga <span className="text-primary font-medium">@enviagoraday</span> para descobrir
+                      </p>
+                    </div>
                   </a>
                 ) : (
-                  <div className="group relative flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.08] to-white/[0.02] backdrop-blur-xl px-10 py-20 text-center transition-all duration-500 hover:border-white/20 hover:shadow-[0_0_60px_rgba(199,210,224,0.08)]">
-                    {/* Glow behind photo */}
-                    <div className="relative mb-8">
-                      <div className="absolute inset-0 rounded-full bg-primary/10 blur-3xl scale-110 opacity-60 group-hover:opacity-100 transition-opacity duration-700" />
-                      <div className="relative h-48 w-48 md:h-64 md:w-64 overflow-hidden rounded-full border-2 border-white/15 shadow-[0_0_50px_rgba(199,210,224,0.1)] group-hover:shadow-[0_0_70px_rgba(199,210,224,0.15)] transition-shadow duration-700">
-                        <img
-                          src={speaker.image!}
-                          alt={speaker.name}
-                          className="h-full w-full object-cover object-center scale-105 group-hover:scale-110 transition-transform duration-700"
-                        />
-                      </div>
+                  <div className="group relative aspect-[4/5] w-full overflow-hidden rounded-3xl bg-card">
+                    {/* Full-bleed speaker photo */}
+                    <img
+                      src={speaker.image!}
+                      alt={speaker.name}
+                      className="absolute inset-0 h-full w-full object-cover object-top scale-105 group-hover:scale-110 transition-transform duration-700"
+                    />
+                    {/* Bottom vignette overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+                    {/* Speaker info — bottom-left */}
+                    <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10">
+                      <h3 className="text-3xl md:text-4xl font-bold text-foreground tracking-tight drop-shadow-lg">
+                        {speaker.name}
+                      </h3>
+                      <p className="mt-2 inline-block rounded-md bg-white/10 backdrop-blur-md px-3 py-1 text-sm md:text-base font-semibold text-foreground">
+                        {speaker.label}
+                      </p>
+                      <p className="mt-2 text-sm text-muted-foreground/80">{speaker.handle}</p>
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-foreground tracking-tight">{speaker.name}</h3>
-                    <p className="mt-2 text-base md:text-lg text-primary/80 font-medium">{speaker.label}</p>
-                    <p className="mt-1 text-sm text-muted-foreground">{speaker.handle}</p>
                   </div>
                 )}
               </motion.div>
