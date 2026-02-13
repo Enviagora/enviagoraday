@@ -7,7 +7,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-[70vh] items-center justify-center overflow-hidden pt-16 flex flex-col py-0">
+    <section className="relative min-h-[50vh] items-center justify-center overflow-hidden pt-8 flex flex-col py-0">
       {/* Radial glow */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full opacity-20" style={{ background: "radial-gradient(circle, hsl(199 89% 48% / 0.4) 0%, transparent 70%)" }} />
@@ -18,7 +18,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-4 font-sans text-xs font-medium uppercase tracking-[0.3em] text-muted-foreground mx-0 my-[52px]">
+          className="mb-2 font-sans text-xs font-medium uppercase tracking-[0.3em] text-muted-foreground mx-0 my-[20px]">
 
           Exclusive Invitation
         </motion.p>
@@ -64,7 +64,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.1 }}
-          className="mt-12 my-[26px]">
+          className="mt-6 my-[12px]">
 
           <button onClick={scrollToForm} className="btn-silver text-base tracking-wide font-thin font-mono text-center">
             CONFIRMAR PRESENÇA 
@@ -76,7 +76,7 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.15 }}
           transition={{ duration: 1, delay: 1.5 }}
-          className="mt-20 flex justify-center gap-1 my-[29px]">
+          className="mt-8 flex justify-center gap-1 my-[12px]">
 
           {[0, 1, 2].map((i) =>
           <svg key={i} width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-silver">
