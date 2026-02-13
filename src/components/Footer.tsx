@@ -8,7 +8,7 @@ const Footer = () =>
         <span className="text-sm text-muted-foreground">© 2026 Enviagora. Todos os direitos reservados.</span>
       </div>
       <div className="flex gap-4">
-        <a href="#" aria-label="Instagram" className="text-muted-foreground transition-colors hover:text-silver">
+        <a href="https://www.instagram.com/enviagoraday/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-muted-foreground transition-colors hover:text-silver">
           <Instagram className="h-5 w-5" />
         </a>
         <a href="#" aria-label="LinkedIn" className="text-muted-foreground transition-colors hover:text-silver">
