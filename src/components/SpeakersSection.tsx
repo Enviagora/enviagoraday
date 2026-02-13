@@ -75,7 +75,7 @@ const SpeakersSection = () => {
                     href="https://www.instagram.com/enviagoraday/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group relative block aspect-[4/5] w-full overflow-hidden rounded-3xl bg-card transition-all duration-500"
+                    className="group relative block aspect-[3/4] w-full max-h-[500px] overflow-hidden rounded-3xl bg-card transition-all duration-500"
                   >
                     <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-white/[0.04] to-white/[0.01]">
                       <HelpCircle className="h-32 w-32 text-muted-foreground/30 group-hover:text-primary/40 transition-colors duration-500" />
@@ -92,7 +92,7 @@ const SpeakersSection = () => {
                     </div>
                   </a>
                 ) : (
-                  <div className="group relative aspect-[4/5] w-full overflow-hidden rounded-3xl bg-card">
+                  <div className="group relative aspect-[3/4] w-full max-h-[500px] overflow-hidden rounded-3xl bg-card">
                     {/* Full-bleed speaker photo */}
                     <img
                       src={speaker.image!}
