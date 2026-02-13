@@ -34,14 +34,14 @@ const HeroSection = () => {
           <span className="text-gradient-silver">clear for takeoff!</span>
         </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.7 }}
-          className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground md:text-lg">
+        
 
-          O ponto de encontro definitivo para a liderança logística e e-commerce.
-        </motion.p>
+
+
+
+
+
+
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -64,7 +64,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.1 }}
-          className="mt-12 my-[20px]">
+          className="mt-12 my-[26px]">
 
           <button onClick={scrollToForm} className="btn-silver text-base tracking-wide font-thin font-mono text-center">
             CONFIRMAR PRESENÇA 
@@ -76,7 +76,7 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.15 }}
           transition={{ duration: 1, delay: 1.5 }}
-          className="mt-20 flex justify-center gap-1 my-0">
+          className="mt-20 flex justify-center gap-1 my-[29px]">
 
           {[0, 1, 2].map((i) =>
           <svg key={i} width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-silver">
