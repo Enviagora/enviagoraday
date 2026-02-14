@@ -12,7 +12,7 @@ const SupportSection = () => (
           <img
             src={logoApoio}
             alt="Apoiadores: Stokki, Dubraval, eBlue"
-            className="h-16 md:h-20 w-auto object-contain grayscale opacity-70"
+            className="h-32 md:h-40 w-auto object-contain grayscale opacity-70"
             loading="lazy"
           />
         </div>
