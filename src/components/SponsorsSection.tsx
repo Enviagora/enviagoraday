@@ -23,7 +23,7 @@ const SponsorsSection = () => (
               key={sponsor.alt}
               src={sponsor.src}
               alt={sponsor.alt}
-              className="h-12 w-auto object-contain opacity-80 grayscale transition-opacity hover:opacity-100"
+              className="h-20 md:h-24 w-auto object-contain opacity-80 grayscale transition-opacity hover:opacity-100"
               loading="lazy"
             />
           ))}
