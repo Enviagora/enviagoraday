@@ -1,31 +1,30 @@
-import { HelpCircle, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 import LogoCarousel from "./LogoCarousel";
-import speaker1 from "@/assets/speakers/speaker-1.png";
-import speaker2 from "@/assets/speakers/speaker-2.png";
-import speaker3 from "@/assets/speakers/speaker-3.png";
-import speaker4 from "@/assets/speakers/speaker-4.jpg";
-import speaker5 from "@/assets/speakers/speaker-5.png";
+
+import diegoSantana from "@/assets/speakers/diego-santana.webp";
+import rogerioAndrade from "@/assets/speakers/rogerio-andrade.webp";
+import zhangYe from "@/assets/speakers/zhang-ye.webp";
+import rafaBorn from "@/assets/speakers/rafa-born.webp";
+import robsonGalvao from "@/assets/speakers/robson-galvao.webp";
 
 const speakers = [
-{ id: 1, label: "E-commerce", handle: "@dihsantanabr", image: speaker1 },
-{ id: 2, label: "CEO da Avantto", handle: "@rogerioandradesa", image: speaker2 },
-{ id: 3, label: "TikTok Shop", handle: "@zhangye.fit", image: speaker3 },
-{ id: 4, label: "CEO da Enviagora", handle: "@rafaelborn", image: speaker4 },
-{ id: 5, label: "Marca Própria", handle: "@robsongalvao", image: speaker5 },
-{ id: 6, label: "Em breve", handle: "@enviagoraday", image: null }];
-
+  { id: 1, image: diegoSantana, alt: "Diego Santana - Especialista em E-commerce" },
+  { id: 2, image: rogerioAndrade, alt: "Rogério Andrade - CEO da Avantto" },
+  { id: 3, image: zhangYe, alt: "Zhang Ye - Founder da Always Fit" },
+  { id: 4, image: rafaBorn, alt: "Rafael Born - Founder Enviagora & Fleurity" },
+  { id: 5, image: robsonGalvao, alt: "Robson Galvão - CEO da Gummy" },
+];
 
 const SpeakersSection = () => {
   const [current, setCurrent] = useState(0);
 
-  const prev = () => setCurrent((c) => c === 0 ? speakers.length - 1 : c - 1);
-  const next = () => setCurrent((c) => c === speakers.length - 1 ? 0 : c + 1);
+  const prev = () => setCurrent((c) => (c === 0 ? speakers.length - 1 : c - 1));
+  const next = () => setCurrent((c) => (c === speakers.length - 1 ? 0 : c + 1));
 
   const speaker = speakers[current];
-  const isMystery = speaker.image === null;
 
   return (
     <section className="relative py-24 md:py-[15px]">
@@ -37,75 +36,55 @@ const SpeakersSection = () => {
         </AnimatedSection>
 
         <AnimatedSection delay={0.15}>
-          <div className="relative mx-auto max-w-lg">
+          <div className="relative mx-auto max-w-sm">
             {/* Navigation buttons */}
             <button
               onClick={prev}
-              className="absolute -left-4 md:-left-16 top-1/2 -translate-y-1/2 z-10 flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 backdrop-blur-md transition-all hover:border-white/25 hover:bg-white/10 hover:shadow-[0_0_20px_rgba(199,210,224,0.12)]"
-              aria-label="Palestrante anterior">
-
+              className="absolute -left-4 md:-left-16 top-1/2 -translate-y-1/2 z-10 flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 backdrop-blur-md transition-all hover:border-white/25 hover:bg-white/10"
+              aria-label="Palestrante anterior"
+            >
               <ChevronLeft className="h-5 w-5 text-foreground" />
             </button>
             <button
               onClick={next}
-              className="absolute -right-4 md:-right-16 top-1/2 -translate-y-1/2 z-10 flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 backdrop-blur-md transition-all hover:border-white/25 hover:bg-white/10 hover:shadow-[0_0_20px_rgba(199,210,224,0.12)]"
-              aria-label="Próximo palestrante">
-
+              className="absolute -right-4 md:-right-16 top-1/2 -translate-y-1/2 z-10 flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 backdrop-blur-md transition-all hover:border-white/25 hover:bg-white/10"
+              aria-label="Próximo palestrante"
+            >
               <ChevronRight className="h-5 w-5 text-foreground" />
             </button>
 
-            {/* Speaker card */}
+            {/* Speaker card - just the image */}
             <AnimatePresence mode="wait">
               <motion.div
                 key={speaker.id}
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}>
-
-                {isMystery ?
-                <a
-                  href="https://www.instagram.com/enviagoraday/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="glass-card-strong flex flex-col items-center justify-center px-8 py-16 text-center transition-all duration-300 hover:border-white/20 hover:shadow-[0_0_40px_rgba(199,210,224,0.1)]">
-
-                    <div className="mb-6 flex h-40 w-40 md:h-52 md:w-52 items-center justify-center rounded-full border border-white/10">
-                      <HelpCircle className="h-20 w-20 text-muted-foreground" />
-                    </div>
-                    <p className="text-lg font-semibold text-foreground">Novos palestrantes</p>
-                    <p className="mt-1 text-sm text-muted-foreground">@enviagoraday</p>
-                  </a> :
-
-                <div className="glass-card-strong flex flex-col items-center justify-center px-8 py-16 text-center">
-                    <div className="mb-6 h-40 w-40 md:h-52 md:w-52 overflow-hidden rounded-full border-2 border-white/15 shadow-[0_0_40px_rgba(199,210,224,0.08)]">
-                      <img
-                      src={speaker.image!}
-                      alt={speaker.label}
-                      className="h-full w-full object-cover object-center" />
-
-                    </div>
-                    <p className="text-lg font-semibold text-foreground">{speaker.label}</p>
-                    <p className="mt-1 text-sm text-muted-foreground">{speaker.handle}</p>
-                  </div>
-                }
+                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                className="overflow-hidden rounded-2xl border border-white/10"
+              >
+                <img
+                  src={speaker.image}
+                  alt={speaker.alt}
+                  className="w-full h-auto object-cover"
+                />
               </motion.div>
             </AnimatePresence>
 
             {/* Dots indicator */}
-            <div className="mt-8 flex items-center justify-center gap-2">
-              {speakers.map((s, i) =>
-              <button
-                key={s.id}
-                onClick={() => setCurrent(i)}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                i === current ?
-                "w-6 bg-foreground" :
-                "w-2 bg-muted-foreground/40 hover:bg-muted-foreground/70"}`
-                }
-                aria-label={`Ir para palestrante ${i + 1}`} />
-
-              )}
+            <div className="mt-6 flex items-center justify-center gap-2">
+              {speakers.map((s, i) => (
+                <button
+                  key={s.id}
+                  onClick={() => setCurrent(i)}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    i === current
+                      ? "w-6 bg-foreground"
+                      : "w-2 bg-muted-foreground/40 hover:bg-muted-foreground/70"
+                  }`}
+                  aria-label={`Ir para palestrante ${i + 1}`}
+                />
+              ))}
             </div>
           </div>
         </AnimatedSection>
@@ -114,8 +93,8 @@ const SpeakersSection = () => {
           <LogoCarousel />
         </AnimatedSection>
       </div>
-    </section>);
-
+    </section>
+  );
 };
 
 export default SpeakersSection;
