@@ -17,7 +17,7 @@ const SponsorsSection = () => (
         <p className="mb-8 text-center font-sans text-xs font-medium uppercase tracking-[0.3em] text-muted-foreground">
           Patrocinadores
         </p>
-        <div className="flex flex-nowrap items-center justify-center gap-6 md:gap-16">
+        <div className="flex flex-nowrap items-center justify-center gap-1 -mx-2 md:mx-0 md:gap-16">
           {sponsors.map((sponsor) => (
             <img
               key={sponsor.alt}
