@@ -2,7 +2,7 @@ import AnimatedSection from "./AnimatedSection";
 import logoApoio from "@/assets/logos/apoio.png";
 
 const SupportSection = () => (
-  <section className="relative py-16">
+  <section className="relative py-3 md:py-16">
     <div className="container mx-auto px-6">
       <AnimatedSection>
         <p className="mb-8 text-center font-sans text-xs font-medium uppercase tracking-[0.3em] text-muted-foreground">

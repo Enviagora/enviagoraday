@@ -2,7 +2,7 @@ import AnimatedSection from "./AnimatedSection";
 import heroImage from "@/assets/hero-aviation.png";
 
 const AboutSection = () =>
-<section className="relative py-24 md:py-0">
+<section className="relative py-4 md:py-0">
     <div className="container mx-auto px-6">
       <div className="glow-line mb-16" />
       <div className="grid gap-12 md:grid-cols-2 md:gap-16 items-center">
