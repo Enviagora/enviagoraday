@@ -32,10 +32,10 @@ const SpeakersSection = () => {
     const dir = diff > 0 ? -1 : 1;
     setIsAnimating(true);
     // Animate x offset to simulate slide, then snap
-    animate(x, dir * 300, {
-      type: "spring",
-      stiffness: 300,
-      damping: 30,
+    animate(x, dir * 200, {
+      type: "tween",
+      duration: 0.45,
+      ease: [0.25, 0.1, 0.25, 1],
       onComplete: () => {
         setCurrent(wrap(newIndex, speakers.length));
         x.set(0);
