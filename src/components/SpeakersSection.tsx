@@ -1,6 +1,6 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useCallback } from "react";
+import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 import LogoCarousel from "./LogoCarousel";
 
@@ -18,18 +18,38 @@ const speakers = [
   { id: 5, image: robsonGalvao, alt: "Robson Galvão - CEO da Gummy" },
 ];
 
+const wrap = (index: number, length: number) => ((index % length) + length) % length;
+
 const SpeakersSection = () => {
   const [current, setCurrent] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const x = useMotionValue(0);
 
-  const prev = () => setCurrent((c) => (c === 0 ? speakers.length - 1 : c - 1));
-  const next = () => setCurrent((c) => (c === speakers.length - 1 ? 0 : c + 1));
+  const goTo = useCallback((newIndex: number) => {
+    if (isAnimating) return;
+    const diff = newIndex - current;
+    // Determine shortest direction
+    const dir = diff > 0 ? -1 : 1;
+    setIsAnimating(true);
+    // Animate x offset to simulate slide, then snap
+    animate(x, dir * 300, {
+      type: "spring",
+      stiffness: 300,
+      damping: 30,
+      onComplete: () => {
+        setCurrent(wrap(newIndex, speakers.length));
+        x.set(0);
+        setIsAnimating(false);
+      },
+    });
+  }, [current, isAnimating, x]);
 
-  const getPrevIndex = (c: number) => (c === 0 ? speakers.length - 1 : c - 1);
-  const getNextIndex = (c: number) => (c === speakers.length - 1 ? 0 : c + 1);
+  const prev = () => goTo(current - 1);
+  const next = () => goTo(current + 1);
 
-  const prevSpeaker = speakers[getPrevIndex(current)];
-  const currentSpeaker = speakers[current];
-  const nextSpeaker = speakers[getNextIndex(current)];
+  const getIndex = (offset: number) => wrap(current + offset, speakers.length);
+
+  const visibleOffsets = [-2, -1, 0, 1, 2];
 
   return (
     <section className="relative py-24 md:py-[15px]">
@@ -41,88 +61,66 @@ const SpeakersSection = () => {
         </AnimatedSection>
 
         <AnimatedSection delay={0.15}>
-          <div className="relative mx-auto flex items-center justify-center gap-3 md:gap-6 max-w-3xl">
+          <div className="relative mx-auto max-w-3xl overflow-hidden">
             {/* Navigation buttons */}
             <button
               onClick={prev}
-              className="absolute -left-2 md:-left-14 top-1/2 -translate-y-1/2 z-20 flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 backdrop-blur-md transition-all hover:border-white/25 hover:bg-white/10"
+              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 backdrop-blur-md transition-all hover:border-white/25 hover:bg-white/10"
               aria-label="Palestrante anterior"
             >
               <ChevronLeft className="h-5 w-5 text-foreground" />
             </button>
             <button
               onClick={next}
-              className="absolute -right-2 md:-right-14 top-1/2 -translate-y-1/2 z-20 flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 backdrop-blur-md transition-all hover:border-white/25 hover:bg-white/10"
+              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-20 flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 backdrop-blur-md transition-all hover:border-white/25 hover:bg-white/10"
               aria-label="Próximo palestrante"
             >
               <ChevronRight className="h-5 w-5 text-foreground" />
             </button>
 
-            {/* Previous card (side) */}
-            <div
-              className="hidden md:block w-1/4 flex-shrink-0 cursor-pointer"
-              onClick={prev}
+            {/* Carousel track */}
+            <motion.div
+              className="flex items-center justify-center"
+              style={{ x }}
             >
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={`prev-${prevSpeaker.id}`}
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 0.4, x: 0 }}
-                  exit={{ opacity: 0, x: -30 }}
-                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                  className="overflow-hidden rounded-2xl border border-white/5 scale-90"
-                >
-                  <img
-                    src={prevSpeaker.image}
-                    alt={prevSpeaker.alt}
-                    className="w-full h-auto object-cover"
-                  />
-                </motion.div>
-              </AnimatePresence>
-            </div>
+              <div className="flex items-center gap-3 md:gap-5">
+                {visibleOffsets.map((offset) => {
+                  const idx = getIndex(offset);
+                  const speaker = speakers[idx];
+                  const isCurrent = offset === 0;
+                  const isAdjacent = Math.abs(offset) === 1;
+                  const isFar = Math.abs(offset) === 2;
 
-            {/* Current card (center) */}
-            <div className="w-3/4 md:w-1/2 flex-shrink-0">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentSpeaker.id}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                  className="overflow-hidden rounded-2xl border border-white/10"
-                >
-                  <img
-                    src={currentSpeaker.image}
-                    alt={currentSpeaker.alt}
-                    className="w-full h-auto object-cover"
-                  />
-                </motion.div>
-              </AnimatePresence>
-            </div>
-
-            {/* Next card (side) */}
-            <div
-              className="hidden md:block w-1/4 flex-shrink-0 cursor-pointer"
-              onClick={next}
-            >
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={`next-${nextSpeaker.id}`}
-                  initial={{ opacity: 0, x: 30 }}
-                  animate={{ opacity: 0.4, x: 0 }}
-                  exit={{ opacity: 0, x: 30 }}
-                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                  className="overflow-hidden rounded-2xl border border-white/5 scale-90"
-                >
-                  <img
-                    src={nextSpeaker.image}
-                    alt={nextSpeaker.alt}
-                    className="w-full h-auto object-cover"
-                  />
-                </motion.div>
-              </AnimatePresence>
-            </div>
+                  return (
+                    <motion.div
+                      key={`${offset}-${idx}`}
+                      className={`flex-shrink-0 overflow-hidden rounded-2xl border transition-all duration-500 cursor-pointer ${
+                        isCurrent
+                          ? "border-white/10 z-10"
+                          : "border-white/5"
+                      } ${isFar ? "hidden md:block" : ""}`}
+                      style={{
+                        width: isCurrent ? "280px" : isAdjacent ? "160px" : "100px",
+                        opacity: isCurrent ? 1 : isAdjacent ? 0.45 : 0.2,
+                        scale: isCurrent ? 1 : isAdjacent ? 0.9 : 0.8,
+                        filter: isCurrent ? "none" : "brightness(0.7)",
+                      }}
+                      onClick={() => {
+                        if (offset !== 0) goTo(current + offset);
+                      }}
+                      whileHover={!isCurrent ? { opacity: 0.6, scale: 0.93 } : {}}
+                    >
+                      <img
+                        src={speaker.image}
+                        alt={speaker.alt}
+                        className="w-full h-auto object-cover"
+                        draggable={false}
+                      />
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </motion.div>
           </div>
 
           {/* Dots indicator */}
@@ -130,7 +128,7 @@ const SpeakersSection = () => {
             {speakers.map((s, i) => (
               <button
                 key={s.id}
-                onClick={() => setCurrent(i)}
+                onClick={() => goTo(i)}
                 className={`h-2 rounded-full transition-all duration-300 ${
                   i === current
                     ? "w-6 bg-foreground"
