@@ -10,14 +10,14 @@ const sponsors = [
 ];
 
 const SponsorsSection = () => (
-  <section className="relative py-20">
+  <section className="relative py-4 md:py-20">
     <div className="container mx-auto px-6">
       <div className="glow-line mb-12" />
       <AnimatedSection>
         <p className="mb-8 text-center font-sans text-xs font-medium uppercase tracking-[0.3em] text-muted-foreground">
           Patrocinadores
         </p>
-        <div className="flex flex-wrap items-center justify-center gap-12 md:gap-16">
+        <div className="flex flex-nowrap items-center justify-center gap-6 md:gap-16">
           {sponsors.map((sponsor) => (
             <img
               key={sponsor.alt}

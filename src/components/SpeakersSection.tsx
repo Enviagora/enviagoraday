@@ -52,7 +52,7 @@ const SpeakersSection = () => {
   const visibleOffsets = [-2, -1, 0, 1, 2];
 
   return (
-    <section className="relative py-24 md:py-[15px]">
+    <section className="relative py-4 md:py-[15px]">
       <div className="container mx-auto px-6">
         <AnimatedSection className="text-center mb-4">
           <p className="font-sans text-xs font-medium uppercase tracking-[0.3em] text-muted-foreground">
