@@ -17,13 +17,13 @@ const SponsorsSection = () => (
         <p className="mb-8 text-center font-sans text-xs font-medium uppercase tracking-[0.3em] text-muted-foreground">
           Patrocinadores
         </p>
-        <div className="flex flex-nowrap items-center justify-center gap-1 -mx-2 md:mx-0 md:gap-16">
+        <div className="flex flex-nowrap items-center justify-center gap-1 md:gap-16">
           {sponsors.map((sponsor) => (
             <img
               key={sponsor.alt}
               src={sponsor.src}
               alt={sponsor.alt}
-              className="h-20 md:h-24 w-auto object-contain opacity-80 grayscale transition-opacity hover:opacity-100"
+              className="h-12 md:h-24 w-auto object-contain opacity-80 grayscale transition-opacity hover:opacity-100"
               loading="lazy"
             />
           ))}
