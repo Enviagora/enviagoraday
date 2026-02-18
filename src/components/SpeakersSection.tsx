@@ -1,14 +1,15 @@
 import AnimatedSection from "./AnimatedSection";
 import LogoCarousel from "./LogoCarousel";
 
-import diegoSantana from "@/assets/speakers/diego-santana-2.webp";
-import rogerioAndrade from "@/assets/speakers/rogerio-andrade-2.webp";
-import zhangYe from "@/assets/speakers/zhang-ye-2.webp";
-import rafaBorn from "@/assets/speakers/rafa-born-2.webp";
-import robsonGalvao from "@/assets/speakers/robson-galvao-2.webp";
-import jackAlecrim from "@/assets/speakers/jack-alecrim.webp";
-import luigiConstantino from "@/assets/speakers/luigi-constantino.webp";
-import moritzNeto from "@/assets/speakers/moritz-neto.webp";
+import diegoSantana from "@/assets/speakers/diego-santana-new.png";
+import rogerioAndrade from "@/assets/speakers/rogerio-andrade-new.png";
+import zhangYe from "@/assets/speakers/zhang-ye-new.png";
+import rafaBorn from "@/assets/speakers/rafa-born-new.png";
+import robsonGalvao from "@/assets/speakers/robson-galvao-new.png";
+import jackAlecrim from "@/assets/speakers/jack-alecrim-new.png";
+import luigiConstantino from "@/assets/speakers/luigi-constantino-new.png";
+import moritzNeto from "@/assets/speakers/moritz-neto-new.png";
+import fernandoScherer from "@/assets/speakers/fernando-scherer.png";
 
 const speakers = [
   { id: 1, image: diegoSantana, alt: "Diego Santana - Especialista em E-commerce" },
@@ -19,6 +20,7 @@ const speakers = [
   { id: 6, image: jackAlecrim, alt: "Jack Alecrim - Cientista em Inovação Capilar" },
   { id: 7, image: luigiConstantino, alt: "Luigi Constantino - Co-Founder do MVM" },
   { id: 8, image: moritzNeto, alt: "Moritz Neto - CEO do Grupo Unfair Advantage" },
+  { id: 9, image: fernandoScherer, alt: "Fernando Scherer - Medalhista Olímpico & Empresário" },
 ];
 
 const SpeakersSection = () => {
