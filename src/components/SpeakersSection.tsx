@@ -69,15 +69,6 @@ const SpeakersSection = () => {
                   loading="lazy"
                 />
 
-                {/* Name overlay at bottom */}
-                <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 bg-gradient-to-t from-black/70 via-black/30 to-transparent">
-                  <p className="font-display text-xs md:text-sm font-semibold text-white/90 leading-tight">
-                    {speaker.name}
-                  </p>
-                  <p className="text-[10px] md:text-xs text-white/50 mt-0.5 font-light">
-                    {speaker.role}
-                  </p>
-                </div>
               </div>
             ))}
           </div>
