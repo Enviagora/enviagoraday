@@ -10,6 +10,9 @@ import jackAlecrim from "@/assets/speakers/jack-alecrim-v2.png";
 import luigiConstantino from "@/assets/speakers/luigi-constantino-v2.png";
 import moritzNeto from "@/assets/speakers/moritz-neto-v2.png";
 import fernandoScherer from "@/assets/speakers/xuxa-v2.png";
+import victorLuana from "@/assets/speakers/bloom-victor-luana.png";
+import diegoSantana from "@/assets/speakers/diego-santana-v2.png";
+import fernandoBrasao from "@/assets/speakers/fernando-brasao.png";
 
 const speakers = [
   { id: 1, image: nataliaMigliorini, name: "Natalia Migliorini", role: "Head de Marketing no G4, Fluency e Moriah" },
@@ -21,6 +24,9 @@ const speakers = [
   { id: 7, image: luigiConstantino, name: "Luigi Constantino", role: "Co-Founder do MVM" },
   { id: 8, image: moritzNeto, name: "Moritz Neto", role: "CEO do Grupo Unfair Advantage" },
   { id: 9, image: fernandoScherer, name: "Fernando Scherer", role: "Medalhista Olímpico & Empresário" },
+  { id: 10, image: victorLuana, name: "Victor e Luana", role: "Founders da Bloom Body e Barbours" },
+  { id: 11, image: diegoSantana, name: "Diego Santana", role: "Especialista em E-commerce" },
+  { id: 12, image: fernandoBrasao, name: "Fernando Brasão", role: "Founder da Marketing Brasil" },
 ];
 
 const SpeakersSection = () => {
