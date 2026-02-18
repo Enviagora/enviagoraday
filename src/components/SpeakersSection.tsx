@@ -32,7 +32,7 @@ const SpeakersSection = () => {
         </AnimatedSection>
 
         <AnimatedSection delay={0.15}>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5 max-w-6xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-3 md:gap-5 max-w-6xl mx-auto [&>div]:w-[calc(50%-6px)] md:[&>div]:w-[calc(33.333%-14px)]">
             {speakers.map((speaker) => (
               <div
                 key={speaker.id}
