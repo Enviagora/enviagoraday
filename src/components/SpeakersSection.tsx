@@ -46,12 +46,6 @@ const SpeakersSection = () => {
           <p className="font-sans text-[10px] font-semibold uppercase tracking-[0.4em] text-steel mb-4">
             Quem estará no palco
           </p>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground leading-tight">
-            Líderes que <span className="text-gradient-silver">movem o mercado</span>
-          </h2>
-          <p className="mt-4 max-w-xl mx-auto text-sm leading-relaxed text-muted-foreground">
-            Fundadores, CEOs e estrategistas que construíram negócios de referência — reunidos em um único palco.
-          </p>
         </AnimatedSection>
 
         {/* Speaker grid */}
