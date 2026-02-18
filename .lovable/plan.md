@@ -1,18 +1,32 @@
 
 
-## Ajuste do Grid de Palestrantes
+## Trocar as 9 fotos dos palestrantes
 
 ### O que muda
-- O grid atual exibe **4 palestrantes por linha no desktop** e **2 no mobile**
-- Será alterado para **3 por linha no desktop** e **2 no mobile** (mantendo o mobile igual)
-- O container `max-w-5xl` sera ampliado para `max-w-6xl` para que os cards fiquem maiores
-- O gap entre os cards será levemente aumentado para melhor respiro visual
+- As 9 fotos atuais dos palestrantes serao substituidas pelas novas versoes enviadas (que incluem nome, cargo e descricao na propria imagem)
+- **Diego Santana** sera substituido por **Natalia Migliorini** (nova palestrante)
+- Os dados (nome e role) do speaker array serao atualizados para refletir a troca
 
-### Detalhes Técnicos
-No arquivo `src/components/SpeakersSection.tsx`, linha 35:
-- `grid-cols-2 md:grid-cols-4` passa para `grid-cols-2 md:grid-cols-3`
-- `max-w-5xl` passa para `max-w-6xl`
-- `gap-3 md:gap-4` passa para `gap-3 md:gap-5`
+### Mapeamento das fotos
 
-Com 8 palestrantes e 3 por linha, teremos 3 fileiras (3 + 3 + 2), com a ultima linha centralizada automaticamente pelo grid.
+| Palestrante atual | Nova foto | Acao |
+|---|---|---|
+| Diego Santana | `1NATI.png` | Substituido por Natalia Migliorini |
+| Rogerio Andrade | `1ROGÉRIO-ANDRADE-2.png` | Foto atualizada |
+| Zhang Ye | `1ZHANG-YE-2.png` | Foto atualizada |
+| Rafael Born | `1RAFA-BORN-2.png` | Foto atualizada |
+| Robson Galvao | `1ROBSON-GALVÃO-2.png` | Foto atualizada |
+| Jack Alecrim | `1JACK-ALECRIM-2.png` | Foto atualizada |
+| Luigi Constantino | `1LUIGI-CONSTANTINO-2.png` | Foto atualizada |
+| Moritz Neto | `1MORITZ-NETO-2.png` | Foto atualizada |
+| Fernando Scherer | `1XUXA--2.png` | Foto atualizada |
+
+### Detalhes tecnicos
+
+1. **Copiar 9 imagens** para `src/assets/speakers/` com nomes limpos (ex: `natalia-migliorini.png`, `rogerio-andrade-v2.png`, etc.)
+
+2. **Atualizar `src/components/SpeakersSection.tsx`**:
+   - Trocar o import de `diegoSantana` por `nataliaMigliorini` apontando para o novo arquivo
+   - Atualizar todos os outros imports para as novas fotos
+   - No array `speakers`, substituir Diego Santana por Natalia Migliorini (nome: "Natalia Migliorini", role: "Head de Marketing no G4, Fluency e Moriah")
 
