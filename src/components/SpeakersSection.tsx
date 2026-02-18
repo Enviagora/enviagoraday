@@ -1,18 +1,18 @@
 import AnimatedSection from "./AnimatedSection";
 import LogoCarousel from "./LogoCarousel";
 
-import diegoSantana from "@/assets/speakers/diego-santana-new.png";
-import rogerioAndrade from "@/assets/speakers/rogerio-andrade-new.png";
-import zhangYe from "@/assets/speakers/zhang-ye-new.png";
-import rafaBorn from "@/assets/speakers/rafa-born-new.png";
-import robsonGalvao from "@/assets/speakers/robson-galvao-new.png";
-import jackAlecrim from "@/assets/speakers/jack-alecrim-new.png";
-import luigiConstantino from "@/assets/speakers/luigi-constantino-new.png";
-import moritzNeto from "@/assets/speakers/moritz-neto-new.png";
-import fernandoScherer from "@/assets/speakers/fernando-scherer.png";
+import nataliaMigliorini from "@/assets/speakers/natalia-migliorini.png";
+import rogerioAndrade from "@/assets/speakers/rogerio-andrade-v2.png";
+import zhangYe from "@/assets/speakers/zhang-ye-v2.png";
+import rafaBorn from "@/assets/speakers/rafa-born-v2.png";
+import robsonGalvao from "@/assets/speakers/robson-galvao-v2.png";
+import jackAlecrim from "@/assets/speakers/jack-alecrim-v2.png";
+import luigiConstantino from "@/assets/speakers/luigi-constantino-v2.png";
+import moritzNeto from "@/assets/speakers/moritz-neto-v2.png";
+import fernandoScherer from "@/assets/speakers/xuxa-v2.png";
 
 const speakers = [
-  { id: 1, image: diegoSantana, name: "Diego Santana", role: "Especialista em E-commerce" },
+  { id: 1, image: nataliaMigliorini, name: "Natalia Migliorini", role: "Head de Marketing no G4, Fluency e Moriah" },
   { id: 2, image: rogerioAndrade, name: "Rogério Andrade", role: "CEO da Avantto" },
   { id: 3, image: zhangYe, name: "Zhang Ye", role: "Founder da Always Fit" },
   { id: 4, image: rafaBorn, name: "Rafael Born", role: "Founder Enviagora & Fleurity" },
