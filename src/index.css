@@ -60,6 +60,10 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-family: 'Inter', sans-serif;
@@ -104,7 +108,11 @@
 
   .btn-silver:hover {
     box-shadow: 0 0 30px rgba(199, 210, 224, 0.35), 0 0 60px rgba(199, 210, 224, 0.1);
-    transform: translateY(-1px);
+    transform: translateY(-2px) scale(1.02);
+  }
+
+  .btn-silver:active {
+    transform: translateY(0) scale(0.98);
   }
 
   .btn-outline-silver {
@@ -117,6 +125,11 @@
     border-color: hsl(var(--silver) / 0.8);
     box-shadow: 0 0 20px rgba(199, 210, 224, 0.15);
     background: hsl(var(--silver) / 0.05);
+    transform: translateY(-1px);
+  }
+
+  .btn-outline-silver:active {
+    transform: translateY(0);
   }
 
   .glow-line {

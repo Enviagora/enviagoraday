@@ -12,8 +12,9 @@ const SupportSection = () => (
           <img
             src={logoApoio}
             alt="Apoiadores: Stokki, Dubraval, eBlue"
-            className="h-16 md:h-20 w-auto object-contain grayscale opacity-70"
+            className="h-16 md:h-20 w-auto object-contain grayscale opacity-70 transition-all duration-300 hover:opacity-100 hover:grayscale-0 hover:scale-105"
             loading="lazy"
+            decoding="async"
           />
         </div>
       </AnimatedSection>

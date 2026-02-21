@@ -71,8 +71,9 @@ const SpeakersSection = () => {
                 <img
                   src={speaker.image}
                   alt={`${speaker.name} - ${speaker.role}`}
-                  className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                  className="w-full h-auto object-cover transition-transform duration-700 scale-[1.02] group-hover:scale-[1.05]"
                   loading="lazy"
+                  decoding="async"
                 />
 
               </div>

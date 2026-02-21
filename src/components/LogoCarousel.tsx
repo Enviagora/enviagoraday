@@ -36,7 +36,9 @@ const LogoCarousel = () => {
               key={i}
               src={logo.src}
               alt={logo.alt}
-              className="h-10 w-auto object-contain opacity-70 grayscale"
+              className="h-10 w-auto object-contain opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+              loading="lazy"
+              decoding="async"
             />
           ))}
         </div>

@@ -29,8 +29,9 @@ const AboutSection = () =>
           <img
             src={heroImage}
             alt="Elemento decorativo metálico em formato de seta"
-            className="w-1/2 md:w-full max-w-md mx-auto object-contain"
-            loading="lazy" />
+            className="w-1/2 md:w-full max-w-md mx-auto object-contain transition-transform duration-700 hover:scale-105"
+            loading="lazy"
+            decoding="async" />
         </AnimatedSection>
       </div>
     </div>

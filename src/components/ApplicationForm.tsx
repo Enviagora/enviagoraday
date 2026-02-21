@@ -74,7 +74,7 @@ const ApplicationForm = () => {
                 placeholder="Seu nome"
                 value={form.nome}
                 onChange={(e) => handleChange("nome", e.target.value)}
-                className="border-white/10 bg-white/5 text-foreground placeholder:text-muted-foreground/50 focus:border-silver/40 focus:ring-silver/20" />
+                className="border-white/10 bg-white/5 text-foreground placeholder:text-muted-foreground/50 focus:border-silver/40 focus:ring-silver/20 transition-all duration-300" />
 
             </div>
 
@@ -86,7 +86,7 @@ const ApplicationForm = () => {
                 placeholder="seu@empresa.com.br"
                 value={form.email}
                 onChange={(e) => handleChange("email", e.target.value)}
-                className="border-white/10 bg-white/5 text-foreground placeholder:text-muted-foreground/50 focus:border-silver/40 focus:ring-silver/20" />
+                className="border-white/10 bg-white/5 text-foreground placeholder:text-muted-foreground/50 focus:border-silver/40 focus:ring-silver/20 transition-all duration-300" />
 
             </div>
 
@@ -97,7 +97,7 @@ const ApplicationForm = () => {
                 placeholder="(11) 99999-9999"
                 value={form.whatsapp}
                 onChange={(e) => handleChange("whatsapp", e.target.value)}
-                className="border-white/10 bg-white/5 text-foreground placeholder:text-muted-foreground/50 focus:border-silver/40 focus:ring-silver/20" />
+                className="border-white/10 bg-white/5 text-foreground placeholder:text-muted-foreground/50 focus:border-silver/40 focus:ring-silver/20 transition-all duration-300" />
 
             </div>
 
@@ -108,7 +108,7 @@ const ApplicationForm = () => {
                 placeholder="Empresa S/A"
                 value={form.empresa}
                 onChange={(e) => handleChange("empresa", e.target.value)}
-                className="border-white/10 bg-white/5 text-foreground placeholder:text-muted-foreground/50 focus:border-silver/40 focus:ring-silver/20" />
+                className="border-white/10 bg-white/5 text-foreground placeholder:text-muted-foreground/50 focus:border-silver/40 focus:ring-silver/20 transition-all duration-300" />
 
             </div>
 
