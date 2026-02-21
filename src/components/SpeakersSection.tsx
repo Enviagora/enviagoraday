@@ -13,6 +13,9 @@ import fernandoScherer from "@/assets/speakers/xuxa-v2.png";
 import victorLuana from "@/assets/speakers/bloom-victor-luana.png";
 import diegoSantana from "@/assets/speakers/diego-santana-v2.png";
 import fernandoBrasao from "@/assets/speakers/fernando-brasao.png";
+import gustavoLeao from "@/assets/speakers/IMG_9570.PNG";
+import danielFleck from "@/assets/speakers/IMG_9571.PNG";
+import giorgioBarone from "@/assets/speakers/IMG_9572.PNG";
 
 const speakers = [
   { id: 1, image: nataliaMigliorini, name: "Natalia Migliorini", role: "Head de Marketing no G4, Fluency e Moriah" },
@@ -27,6 +30,9 @@ const speakers = [
   { id: 10, image: victorLuana, name: "Victor e Luana", role: "Founders da Bloom Body e Barbours" },
   { id: 11, image: diegoSantana, name: "Diego Santana", role: "Especialista em E-commerce" },
   { id: 12, image: fernandoBrasao, name: "Fernando Brasão", role: "Founder da Marketing Brasil" },
+  { id: 13, image: gustavoLeao, name: "Gustavo Leão", role: "Co-Founder da Eblue Solutions" },
+  { id: 14, image: danielFleck, name: "Daniel Fleck", role: "Naturopata e Terapeuta Vibracional" },
+  { id: 15, image: giorgioBarone, name: "Giorgio Barone", role: "+10 Milhões de Seguidores Somados" },
 ];
 
 const SpeakersSection = () => {
