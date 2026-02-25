@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Check } from "lucide-react";
 
 const topics = [
   { title: "ESCALA", description: "Estratégias para crescimento exponencial" },
