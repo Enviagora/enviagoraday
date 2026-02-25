@@ -13,9 +13,10 @@ import fernandoScherer from "@/assets/speakers/xuxa-v2.png";
 import victorLuana from "@/assets/speakers/bloom-victor-luana.png";
 import diegoSantana from "@/assets/speakers/diego-santana-v2.png";
 import fernandoBrasao from "@/assets/speakers/fernando-brasao.png";
-import gustavoLeao from "@/assets/speakers/IMG_9570.PNG";
+import gustavoLeao from "@/assets/speakers/IMG_9572.PNG";
 import danielFleck from "@/assets/speakers/IMG_9571.PNG";
-import giorgioBarone from "@/assets/speakers/IMG_9572.PNG";
+import giorgioBarone from "@/assets/speakers/IMG_9570.PNG";
+
 
 const speakers = [
   { id: 1, image: giorgioBarone, name: "Giorgio Barone", role: "+10 Milhões de Seguidores Somados" },
