@@ -7,7 +7,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-[50vh] items-center justify-center overflow-hidden pt-24 md:pt-14 flex flex-col py-10">
+    <section className="relative min-h-[50vh] items-center justify-center overflow-hidden pt-36 md:pt-28 flex flex-col py-0">
       {/* Radial glow */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full opacity-20" style={{ background: "radial-gradient(circle, hsl(199 89% 48% / 0.4) 0%, transparent 70%)" }} />
