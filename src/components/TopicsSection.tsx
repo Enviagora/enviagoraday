@@ -25,7 +25,7 @@ export const TopicsSection = () => {
       <p className="mb-6 text-center font-sans text-xs font-medium uppercase tracking-[0.3em] text-muted-foreground">
         UM DIA INTEIRO FALANDO SOBRE
       </p>
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Os Temas do Evento
           </h2>
         </motion.div>
