@@ -22,9 +22,11 @@ export const TopicsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="text-blue-400 font-medium mb-4 tracking-wide uppercase text-sm">
-            Um dia inteiro falando sobre
-          </p>
+            <div className="mt-16">
+      <p className="mb-6 text-center font-sans text-xs font-medium uppercase tracking-[0.3em] text-muted-foreground">
+        UM DIA INTEIRO FALANDO DE
+      </p>
+      <div className="relative overflow-hidden">
           <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Os Temas do Evento
           </h2>
