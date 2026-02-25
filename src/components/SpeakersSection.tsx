@@ -38,7 +38,7 @@ const speakers = [
 
 const SpeakersSection = () => {
   return (
-<section className="relative pt-4 pb-16 md:pt-8 md:pb-24">
+<section className="relative pt-4 pb-4 md:pt-8 md:pb-24">
       {/* Subtle ambient glow */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div
