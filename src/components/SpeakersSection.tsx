@@ -18,21 +18,21 @@ import danielFleck from "@/assets/speakers/IMG_9571.PNG";
 import giorgioBarone from "@/assets/speakers/IMG_9572.PNG";
 
 const speakers = [
-  { id: 1, image: nataliaMigliorini, name: "Natalia Migliorini", role: "Head de Marketing no G4, Fluency e Moriah" },
+  { id: 1, image: giorgioBarone, name: "Giorgio Barone", role: "+10 Milhões de Seguidores Somados" },
   { id: 2, image: rogerioAndrade, name: "Rogério Andrade", role: "CEO da Avantto" },
   { id: 3, image: zhangYe, name: "Zhang Ye", role: "Founder da Always Fit" },
   { id: 4, image: rafaBorn, name: "Rafael Born", role: "Founder Enviagora & Fleurity" },
-  { id: 5, image: robsonGalvao, name: "Robson Galvão", role: "CEO da Gummy" },
-  { id: 6, image: jackAlecrim, name: "Jack Alecrim", role: "Cientista em Inovação Capilar" },
-  { id: 7, image: luigiConstantino, name: "Luigi Constantino", role: "Co-Founder do MVM" },
-  { id: 8, image: moritzNeto, name: "Moritz Neto", role: "CEO do Grupo Unfair Advantage" },
-  { id: 9, image: fernandoScherer, name: "Fernando Scherer", role: "Medalhista Olímpico & Empresário" },
-  { id: 10, image: victorLuana, name: "Victor e Luana", role: "Founders da Bloom Body e Barbours" },
-  { id: 11, image: diegoSantana, name: "Diego Santana", role: "Especialista em E-commerce" },
-  { id: 12, image: fernandoBrasao, name: "Fernando Brasão", role: "Founder da Marketing Brasil" },
+  { id: 5, image: diegoSantana, name: "Diego Santana", role: "Especialista em E-commerce" },
+  { id: 6, image: fernandoScherer, name: "Fernando Scherer", role: "Medalhista Olímpico & Empresário" },
+  { id: 7, image: robsonGalvao, name: "Robson Galvão", role: "CEO da Gummy" },
+  { id: 8, image: fernandoBrasao, name: "Fernando Brasão", role: "Founder da Marketing Brasil" },
+  { id: 9, image: luigiConstantino, name: "Luigi Constantino", role: "Co-Founder do MVM" },
+  { id: 10, image: moritzNeto, name: "Moritz Neto", role: "CEO do Grupo Unfair Advantage" },
+  { id: 11, image: victorLuana, name: "Victor e Luana", role: "Founders da Bloom Body e Barbours" },
+  { id: 12, image: jackAlecrim, name: "Jack Alecrim", role: "Cientista em Inovação Capilar" },
   { id: 13, image: gustavoLeao, name: "Gustavo Leão", role: "Co-Founder da Eblue Solutions" },
   { id: 14, image: danielFleck, name: "Daniel Fleck", role: "Naturopata e Terapeuta Vibracional" },
-  { id: 15, image: giorgioBarone, name: "Giorgio Barone", role: "+10 Milhões de Seguidores Somados" },
+  { id: 15, image: nataliaMigliorini, name: "Natalia Migliorini", role: "Head de Marketing no G4, Fluency e Moriah" },
 ];
 
 const SpeakersSection = () => {
