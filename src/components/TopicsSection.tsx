@@ -26,9 +26,6 @@ export const TopicsSection = () => {
           <p className="text-blue-400 font-medium mb-4 tracking-wide uppercase text-sm">
             Um dia inteiro falando sobre:
           </p>
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Os Temas do Evento
-          </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-8"></div>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
             Nada de palco genérico. Nada de conteúdo de superfície.
