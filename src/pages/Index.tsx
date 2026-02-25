@@ -12,12 +12,12 @@ const Index = () => (
   <div className="bg-page-gradient min-h-screen">
     <Header />
     <HeroSection />
-    <TopicsSection />
     <SpeakersSection />
-    <AboutSection />
+    <TopicsSection />
     <SponsorsSection />
-    <ApplicationForm />
+    <AboutSection />
     <SupportSection />
+    <ApplicationForm />
     <Footer />
   </div>
 );
