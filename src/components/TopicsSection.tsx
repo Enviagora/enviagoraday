@@ -12,7 +12,7 @@ const topics = [
 
 export const TopicsSection = () => {
   return (
-<section className="pt-8 pb-8 px-4 relative overflow-hidden">
+<section className="pt-8 pb-4 px-4 relative overflow-hidden">
 
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
