@@ -47,7 +47,7 @@ const SpeakersSection = () => {
         />
       </div>
 
-      <div className="container relative z-10 mx-auto px-4 md:px-6">
+      <div className="container relative z-1 mx-auto px-4 md:px-6">
         {/* Section header */}
         <AnimatedSection className="text-center mb-14">
           <p className="font-sans text-[10px] font-semibold uppercase tracking-[0.4em] text-steel mb-4">
