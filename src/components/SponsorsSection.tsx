@@ -10,7 +10,7 @@ const sponsors = [
 ];
 
 const SponsorsSection = () => (
-  <section className="relative py-4 md:py-20">
+  <section className="relative py-4 md:py-8">
     <div className="container mx-auto px-6">
       <div className="glow-line mb-12" />
       <AnimatedSection>
