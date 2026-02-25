@@ -14,14 +14,6 @@ const HeroSection = () => {
       </div>
 
       <div className="container relative z-10 text-center mx-0 my-0 px-0">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-2 font-sans text-xs font-medium uppercase tracking-[0.3em] text-muted-foreground mx-0 my-[20px]">
-
-          Exclusive Invitation
-        </motion.p>
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
