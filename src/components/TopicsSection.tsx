@@ -36,40 +36,23 @@ export const TopicsSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {topics.map((topic, index) => (
-            <motion.div
-              key={topic.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative"
-            >
-              <div className="bg-black border border-gray-800 rounded-2xl p-8 h-full hover:border-blue-500/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                <div className="relative z-10">
-                  <div className="flex items-start gap-3 mb-4">
-                    <div className="mt-1 flex-shrink-0">
-                      <div className="w-8 h-8 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center group-hover:bg-blue-500/20 transition-colors">
-                        <Check className="w-4 h-4 text-blue-400" />
-                      </div>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-white mb-2 tracking-wide">
-                        {topic.title}
-                      </h3>
-                      <p className="text-gray-400 text-sm leading-relaxed">
-                        {topic.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+       <div className="flex flex-wrap gap-3 mb-12 justify-start">
+  {topics.map((topic, index) => (
+    <motion.div
+      key={topic.title}
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.4, delay: index * 0.08 }}
+    >
+      <div className="border border-white/80 rounded-full px-6 py-3 hover:bg-white/10 transition-all duration-300 cursor-default">
+        <span className="text-white font-bold tracking-widest uppercase text-sm md:text-base">
+          {topic.title}
+        </span>
+      </div>
+    </motion.div>
+  ))}
+</div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
