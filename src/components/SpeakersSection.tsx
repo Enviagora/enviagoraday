@@ -16,6 +16,9 @@ import fernandoBrasao from "@/assets/speakers/fernando-brasao.png";
 import gustavoLeao from "@/assets/speakers/IMG_9572.PNG";
 import danielFleck from "@/assets/speakers/IMG_9571.PNG";
 import giorgioBarone from "@/assets/speakers/IMG_9570.PNG";
+import gustavoMagalhaes from "@/assets/speakers/Felipe-Magalhaes.png";
+import ricardoDias from "@/assets/speakers/Ricardo-Dias.png";
+import edisonKwecko from "@/assets/speakers/Edison-K..png";
 
 
 const speakers = [
@@ -28,12 +31,15 @@ const speakers = [
   { id: 7, image: moritzNeto, name: "Moritz Neto", role: "CEO do Grupo Unfair Advantage" },
   { id: 8, image: robsonGalvao, name: "Robson Galvão", role: "CEO da Gummy" },
   { id: 9, image: rogerioAndrade, name: "Rogério Andrade", role: "CEO da Avantto" },
-  { id: 10, image: jackAlecrim, name: "Jack Alecrim", role: "Cientista em Inovação Capilar" },
-  { id: 11, image: victorLuana, name: "Victor e Luana", role: "Founders da Bloom Body e Barbours" },
-  { id: 12, image: fernandoBrasao, name: "Fernando Brasão", role: "Founder da Marketing Brasil" },
-  { id: 13, image: nataliaMigliorini, name: "Natalia Migliorini", role: "Head de Marketing no G4, Fluency e Moriah" },
-  { id: 14, image: gustavoLeao, name: "Gustavo Leão", role: "Co-Founder da Eblue Solutions" },
-  { id: 15, image: danielFleck, name: "Daniel Fleck", role: "Naturopata e Terapeuta Vibracional" },
+  { id: 10, image: gustavoMagalhaes, name: "Gustavo Magalhães", role: "Fundador da Dreams Holding" },
+  { id: 11, image: ricardoDias, name: "Ricardo Dias", role: "Co-Fundador da Adventures Inc." },
+  { id: 12, image: edisonKwecko, name: "Edison Kwecko", role: "Fundador da Stokki" },
+  { id: 13, image: jackAlecrim, name: "Jack Alecrim", role: "Cientista em Inovação Capilar" },
+  { id: 14, image: victorLuana, name: "Victor e Luana", role: "Founders da Bloom Body e Barbours" },
+  { id: 15, image: fernandoBrasao, name: "Fernando Brasão", role: "Founder da Marketing Brasil" },
+  { id: 16, image: nataliaMigliorini, name: "Natalia Migliorini", role: "Head de Marketing no G4, Fluency e Moriah" },
+  { id: 17, image: gustavoLeao, name: "Gustavo Leão", role: "Co-Founder da Eblue Solutions" },
+  { id: 18, image: danielFleck, name: "Daniel Fleck", role: "Naturopata e Terapeuta Vibracional" },
 ];
 
 const SpeakersSection = () => {
