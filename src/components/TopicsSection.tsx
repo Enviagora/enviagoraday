@@ -29,10 +29,6 @@ export const TopicsSection = () => {
           <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Os Temas do Evento
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-8"></div>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
-            Nada de palco genérico. Nada de conteúdo de superfície.
-          </p>
         </motion.div>
 
        <div className="flex flex-wrap gap-3 mb-12 justify-start">
