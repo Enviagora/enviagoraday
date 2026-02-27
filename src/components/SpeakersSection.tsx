@@ -37,9 +37,8 @@ const speakers = [
   { id: 13, image: jackAlecrim, name: "Jack Alecrim", role: "Cientista em Inovação Capilar" },
   { id: 14, image: victorLuana, name: "Victor e Luana", role: "Founders da Bloom Body e Barbours" },
   { id: 15, image: fernandoBrasao, name: "Fernando Brasão", role: "Founder da Marketing Brasil" },
-  { id: 16, image: nataliaMigliorini, name: "Natalia Migliorini", role: "Head de Marketing no G4, Fluency e Moriah" },
-  { id: 17, image: gustavoLeao, name: "Gustavo Leão", role: "Co-Founder da Eblue Solutions" },
-  { id: 18, image: danielFleck, name: "Daniel Fleck", role: "Naturopata e Terapeuta Vibracional" },
+  { id: 16, image: gustavoLeao, name: "Gustavo Leão", role: "Co-Founder da Eblue Solutions" },
+  { id: 17, image: danielFleck, name: "Daniel Fleck", role: "Naturopata e Terapeuta Vibracional" },
 ];
 
 const SpeakersSection = () => {
