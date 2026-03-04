@@ -2,7 +2,7 @@ import AnimatedSection from "./AnimatedSection";
 import LogoCarousel from "./LogoCarousel";
 
 import nataliaMigliorini from "@/assets/speakers/natalia-migliorini.png";
-import rogerioAndrade from "@/assets/speakers/rogerio-andrade-v2.png";
+import rogerioAndrade from "@/assets/speakers/1ROGERIO-ANDRADE.png";
 import zhangYe from "@/assets/speakers/zhang-ye-v2.png";
 import rafaBorn from "@/assets/speakers/rafa-born-v2.png";
 import robsonGalvao from "@/assets/speakers/robson-galvao-v2.png";
