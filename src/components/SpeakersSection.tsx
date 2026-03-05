@@ -19,6 +19,7 @@ import giorgioBarone from "@/assets/speakers/IMG_9570.PNG";
 import gustavoMagalhaes from "@/assets/speakers/Felipe-Magalhaes.png";
 import ricardoDias from "@/assets/speakers/Ricardo-Dias.png";
 import edisonKwecko from "@/assets/speakers/Edison-K..png";
+import leilaOkumura from "@/assets/speakers/Leila_Okumura_2.png";
 
 
 const speakers = [
@@ -39,6 +40,7 @@ const speakers = [
   { id: 15, image: fernandoBrasao, name: "Fernando Brasão", role: "Founder da Marketing Brasil" },
   { id: 16, image: gustavoLeao, name: "Gustavo Leão", role: "Co-Founder da Eblue Solutions" },
   { id: 17, image: danielFleck, name: "Daniel Fleck", role: "Naturopata e Terapeuta Vibracional" },
+  { id: 18, image: leilaOkumura, name: "Leila Okumura", role: "Naturopata e Terapeuta Vibracional" },
 ];
 
 const SpeakersSection = () => {
