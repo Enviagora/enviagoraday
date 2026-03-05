@@ -1,11 +1,7 @@
 import AnimatedSection from "./AnimatedSection";
-import logoAdeus from "@/assets/logos/adeus.png";
-import logoPopozuda from "@/assets/logos/popozuda.png";
 import logoApoio from "@/assets/logos/apoio.png";
 
 const supporters = [
-  { src: logoAdeus, alt: "Adeus" },
-  { src: logoPopozuda, alt: "Popozuda" },
   { src: logoApoio, alt: "Kanglu" },
 ];
 
