@@ -1,12 +1,14 @@
 import AnimatedSection from "./AnimatedSection";
 import logoAlwaysFit from "@/assets/logos/alwaysfit.png";
 import logoBloom from "@/assets/logos/bloom.png";
-import logoMvm from "@/assets/logos/mvm.png";
+import logoAdeus from "@/assets/logos/adeus.png";
+import logoPopozuda from "@/assets/logos/popozuda.png";
 
 const brands = [
   { src: logoAlwaysFit, alt: "AlwaysFit" },
   { src: logoBloom, alt: "Bloom" },
-  { src: logoMvm, alt: "MVM" },
+  { src: logoAdeus, alt: "Adeus" },
+  { src: logoPopozuda, alt: "Popozuda" },
 ];
 
 const TikTokShopSection = () => (
@@ -43,7 +45,7 @@ const TikTokShopSection = () => (
             </h2>
 
             <p className="text-sm md:text-base text-white/60 max-w-md leading-relaxed">
-              Marcas como AlwaysFit, Bloom e MVM escalam milhares de pedidos por dia. O que elas têm em comum? A Enviagora na operação.
+              Marcas como AlwaysFit, Bloom, Adeus e Popozuda escalam milhares de pedidos por dia. O que elas têm em comum? A Enviagora na operação.
             </p>
 
             <div className="flex items-center justify-center gap-8 py-2">
