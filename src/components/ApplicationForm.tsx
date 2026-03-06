@@ -17,7 +17,7 @@ const ApplicationForm = () => {
   const [loading, setLoading] = useState(false);
 
   const handleChange = (field: string, value: string) => {
-    if (field === "whatsapp") value = formatPhone(value);
+    if (field === "whatsappa") value = formatPhone(value);
     setForm((prev) => ({ ...prev, [field]: value }));
   };
 
