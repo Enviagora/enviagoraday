@@ -62,7 +62,7 @@ const TikTokShopSection = () => (
             </div>
 
             <a
-              href="#inscricao"
+              href="#formulario"
               className="mt-2 inline-block rounded-full px-8 py-3 text-sm font-bold text-white uppercase tracking-widest transition-all duration-300 hover:scale-105 hover:shadow-lg"
               style={{
                 background: "linear-gradient(90deg, #00f2ea, #ff0050)",
