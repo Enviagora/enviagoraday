@@ -20,7 +20,6 @@ const Index = () => (
     <SupportersSection />
     <TikTokShopSection />
     <AboutSection />
-    <SupportSection />
     <ApplicationForm />
     <Footer />
   </div>
