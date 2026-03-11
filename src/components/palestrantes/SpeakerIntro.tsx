@@ -32,7 +32,7 @@ const SpeakerIntro = () => (
       </p>
 <p>
   Para ajudá-lo, disponibilizamos um{" "}
-  
+  <a
     href="https://docs.google.com/presentation/d/1A2Olc0qUubNVPWEpPsZ95luUKTOdQjX8FsmLvJUa-Vk/edit?usp=sharing"
     target="_blank"
     rel="noopener noreferrer"
