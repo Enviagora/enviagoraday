@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Download, Lock, X, FileText, Loader2, AlertCircle } from "lucide-react";
+import { Download, Lock, X, FileText, Loader as Loader2, CircleAlert as AlertCircle } from "lucide-react";
 
 interface Presentation {
   id: string;
