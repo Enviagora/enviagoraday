@@ -30,7 +30,7 @@ const SpeakerIntro = () => (
         <span className="text-foreground font-semibold">crescer</span>. E a sua
         voz vai fazer parte disso.
       </p>
-      <p>
+<p>
   Para ajudá-lo, disponibilizamos um{" "}
   
     href="https://docs.google.com/presentation/d/1A2Olc0qUubNVPWEpPsZ95luUKTOdQjX8FsmLvJUa-Vk/edit?usp=sharing"
