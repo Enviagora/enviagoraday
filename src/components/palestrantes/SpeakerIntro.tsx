@@ -31,18 +31,24 @@ const SpeakerIntro = () => (
         voz vai fazer parte disso.
       </p>
       <p>
-        Para ajudá-lo, disponibilizamos um{" "}
-        <a
-          href="https://docs.google.com/presentation/d/1A2Olc0qUubNVPWEpPsZ95luUKTOdQjX8FsmLvJUa-Vk/edit?usp=sharing"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-accent hover:underline inline-flex items-center gap-1"
-        >
-          template de apresentação
-          <ExternalLink className="h-3 w-3" />
-        </a>{" "}
-        como base para sua palestra.
-      </p>
+  Para ajudá-lo, disponibilizamos um{" "}
+  
+    href="https://docs.google.com/presentation/d/1A2Olc0qUubNVPWEpPsZ95luUKTOdQjX8FsmLvJUa-Vk/edit?usp=sharing"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-accent hover:underline inline-flex items-center gap-1"
+  >
+    template de apresentação
+    <ExternalLink className="h-3 w-3" />
+  </a>{" "}
+  como base para sua palestra. Caso prefira criar a sua própria, o tamanho é{" "}
+  <span className="text-foreground font-semibold">2758 × 1034 pixels</span> —
+  e pedimos apenas que utilize{" "}
+  <span className="text-foreground font-semibold">
+    a primeira imagem do template como capa
+  </span>
+  , para mantermos a identidade visual do evento.
+</p>
       <p className="text-amber-400/80 font-semibold pt-2">
         Prazo: As apresentações devem ser enviadas até{" "}
         <span className="text-amber-400">quinta-feira, 12 de março às 20h00</span>.
