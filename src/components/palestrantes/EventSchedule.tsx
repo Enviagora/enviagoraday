@@ -211,7 +211,7 @@ const schedule = [
   },
   {
     time: "16:45 – 17:30",
-    speaker: "Ye + Rafa + Harry",
+    speaker: "Ye + Rafa + Herly",
     theme: "As novidades do TikTok diretamente da China",
     duration: "45 min",
     isBreak: false,
