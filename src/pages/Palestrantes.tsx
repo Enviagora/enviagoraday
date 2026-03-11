@@ -4,6 +4,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 import SpeakerIntro from "@/components/palestrantes/SpeakerIntro";
 import EventSchedule from "@/components/palestrantes/EventSchedule";
 import PresentationUpload from "@/components/palestrantes/PresentationUpload";
+import AdminDownload from "@/components/palestrantes/AdminDownload";
 
 const Palestrantes = () => (
   <div className="bg-page-gradient min-h-screen">
@@ -23,7 +24,14 @@ const Palestrantes = () => (
         </AnimatedSection>
       </div>
     </main>
-    <Footer />
+    <footer className="border-t border-white/5 py-10">
+      <div className="container mx-auto flex flex-col items-center justify-between gap-4 px-6 sm:flex-row">
+        <div className="flex items-center gap-2">
+          <span className="text-sm text-muted-foreground">© 2026 Enviagora. Todos os direitos reservados.</span>
+        </div>
+        <AdminDownload />
+      </div>
+    </footer>
   </div>
 );
 
