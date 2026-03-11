@@ -82,7 +82,7 @@ const schedule = [
   {
     time: "11:00 – 11:30",
     speaker: "Fernando Sherer",
-    theme: "Marketing que gera crescimento real",
+    theme: "Alta performance",
     duration: "30 min",
     isBreak: false,
   },
@@ -104,7 +104,7 @@ const schedule = [
   {
     time: "12:40 – 13:00",
     speaker: "Daniel Fleck",
-    theme: "Saúde",
+    theme: "Saúde mental",
     duration: "20 min",
     isBreak: false,
   },
@@ -129,7 +129,7 @@ const schedule = [
     duration: "5 min",
     isBreak: false,
   },
-  { time: "13:30 – 13:55", speaker: "Ricardo Dias", theme: "", duration: "25 min", isBreak: false },
+  { time: "13:30 – 13:55", speaker: "Ricardo Dias", theme: "Creators Economy", duration: "25 min", isBreak: false },
   {
     time: "13:55 – 14:00",
     speaker: "Transição",
@@ -154,7 +154,7 @@ const schedule = [
   {
     time: "14:20 – 14:35",
     speaker: "Gustavo Magalhães",
-    theme: "",
+    theme: "Vyral",
     duration: "15 min",
     isBreak: false,
   },
@@ -162,7 +162,7 @@ const schedule = [
   {
     time: "15:05 – 15:25",
     speaker: "Victor e Luana",
-    theme: "",
+    theme: "Live Shop",
     duration: "20 min",
     isBreak: false,
   },
@@ -197,7 +197,7 @@ const schedule = [
   },
   {
     time: "16:30 – 16:40",
-    speaker: "Kanglu — Nuni",
+    speaker: "Kanglu — Rafael Jr.",
     theme: "",
     duration: "10 min",
     isBreak: false,
