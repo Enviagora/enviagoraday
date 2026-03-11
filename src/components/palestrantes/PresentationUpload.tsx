@@ -81,7 +81,7 @@ const PresentationUpload = () => {
   const isReady = speakerName.trim().length > 0 && file !== null && status !== "uploading";
 
   return (
-    <section>
+    <section id="presentation-upload">
       <div className="flex items-center gap-3 mb-8">
         <Upload className="h-5 w-5 text-accent" />
         <h2 className="text-gradient-silver font-heading text-2xl md:text-3xl font-bold">
