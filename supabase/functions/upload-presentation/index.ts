@@ -1,4 +1,5 @@
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
+import { createClient } from "npm:@supabase/supabase-js@2";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -14,74 +15,6 @@ function errorResponse(message: string, status = 400) {
   });
 }
 
-async function getAccessToken(credentials: {
-  client_email: string;
-  private_key: string;
-}): Promise<string> {
-  const now = Math.floor(Date.now() / 1000);
-  const header = { alg: "RS256", typ: "JWT" };
-  const payload = {
-    iss: credentials.client_email,
-    scope: "https://www.googleapis.com/auth/drive.file",
-    aud: "https://oauth2.googleapis.com/token",
-    iat: now,
-    exp: now + 3600,
-  };
-
-  const enc = (obj: unknown) =>
-    btoa(JSON.stringify(obj))
-      .replace(/\+/g, "-")
-      .replace(/\//g, "_")
-      .replace(/=+$/, "");
-
-  const unsignedToken = `${enc(header)}.${enc(payload)}`;
-
-  const pemContents = credentials.private_key
-    .replace(/-----BEGIN PRIVATE KEY-----/, "")
-    .replace(/-----END PRIVATE KEY-----/, "")
-    .replace(/\s/g, "");
-
-  const binaryKey = Uint8Array.from(atob(pemContents), (c) => c.charCodeAt(0));
-
-  const cryptoKey = await crypto.subtle.importKey(
-    "pkcs8",
-    binaryKey,
-    { name: "RSASSA-PKCS1-v1_5", hash: "SHA-256" },
-    false,
-    ["sign"]
-  );
-
-  const signature = await crypto.subtle.sign(
-    "RSASSA-PKCS1-v1_5",
-    cryptoKey,
-    new TextEncoder().encode(unsignedToken)
-  );
-
-  const sig = btoa(String.fromCharCode(...new Uint8Array(signature)))
-    .replace(/\+/g, "-")
-    .replace(/\//g, "_")
-    .replace(/=+$/, "");
-
-  const jwt = `${unsignedToken}.${sig}`;
-
-  const tokenRes = await fetch("https://oauth2.googleapis.com/token", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams({
-      grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer",
-      assertion: jwt,
-    }),
-  });
-
-  if (!tokenRes.ok) {
-    const err = await tokenRes.text();
-    throw new Error(`Token exchange failed: ${err}`);
-  }
-
-  const { access_token } = await tokenRes.json();
-  return access_token;
-}
-
 Deno.serve(async (req: Request) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { status: 200, headers: corsHeaders });
@@ -92,17 +25,10 @@ Deno.serve(async (req: Request) => {
       return errorResponse("Method not allowed", 405);
     }
 
-    const credentialsRaw = Deno.env.get("GOOGLE_SERVICE_ACCOUNT_KEY");
-    const folderId = Deno.env.get("GOOGLE_DRIVE_FOLDER_ID");
+    const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
+    const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 
-    if (!credentialsRaw || !folderId) {
-      return errorResponse(
-        "Google Drive integration not configured",
-        500
-      );
-    }
-
-    const credentials = JSON.parse(credentialsRaw);
+    const supabase = createClient(supabaseUrl, serviceRoleKey);
 
     const formData = await req.formData();
     const speakerName = formData.get("speakerName") as string | null;
@@ -121,70 +47,44 @@ Deno.serve(async (req: Request) => {
       return errorResponse("Formato invalido. Aceitos: .pptx, .pdf, .key");
     }
 
-    const accessToken = await getAccessToken(credentials);
+    const sanitizedName = speakerName
+      .trim()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-zA-Z0-9\s\-_]/g, "")
+      .replace(/\s+/g, "_");
 
-    const sanitizedName = speakerName.trim().replace(/[^a-zA-Z0-9\s\-_]/g, "");
     const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
-    const fileName = `${sanitizedName}_${timestamp}.${ext}`;
+    const storagePath = `${sanitizedName}_${timestamp}.${ext}`;
 
-    const metadata = {
-      name: fileName,
-      parents: [folderId],
-    };
+    const fileBytes = await file.arrayBuffer();
 
-    const boundary = "enviagora_upload_boundary";
-    const fileBytes = new Uint8Array(await file.arrayBuffer());
+    const { error: storageError } = await supabase.storage
+      .from("presentations")
+      .upload(storagePath, fileBytes, {
+        contentType: file.type || "application/octet-stream",
+        upsert: false,
+      });
 
-    const metaPart = [
-      `--${boundary}`,
-      "Content-Type: application/json; charset=UTF-8",
-      "",
-      JSON.stringify(metadata),
-      "",
-    ].join("\r\n");
-
-    const filePart = [
-      `--${boundary}`,
-      `Content-Type: ${file.type || "application/octet-stream"}`,
-      "",
-      "",
-    ].join("\r\n");
-
-    const closing = `\r\n--${boundary}--`;
-
-    const metaBytes = new TextEncoder().encode(metaPart);
-    const filePartBytes = new TextEncoder().encode(filePart);
-    const closingBytes = new TextEncoder().encode(closing);
-
-    const body = new Uint8Array(
-      metaBytes.length + filePartBytes.length + fileBytes.length + closingBytes.length
-    );
-    body.set(metaBytes, 0);
-    body.set(filePartBytes, metaBytes.length);
-    body.set(fileBytes, metaBytes.length + filePartBytes.length);
-    body.set(closingBytes, metaBytes.length + filePartBytes.length + fileBytes.length);
-
-    const uploadRes = await fetch(
-      "https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart",
-      {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-          "Content-Type": `multipart/related; boundary=${boundary}`,
-        },
-        body,
-      }
-    );
-
-    if (!uploadRes.ok) {
-      const errText = await uploadRes.text();
-      throw new Error(`Google Drive upload failed: ${errText}`);
+    if (storageError) {
+      throw new Error(`Storage upload failed: ${storageError.message}`);
     }
 
-    const result = await uploadRes.json();
+    const { error: dbError } = await supabase.from("presentations").insert({
+      speaker_name: speakerName.trim(),
+      file_name: file.name,
+      storage_path: storagePath,
+      file_size: file.size,
+      mime_type: file.type || "application/octet-stream",
+    });
+
+    if (dbError) {
+      await supabase.storage.from("presentations").remove([storagePath]);
+      throw new Error(`Database insert failed: ${dbError.message}`);
+    }
 
     return new Response(
-      JSON.stringify({ success: true, fileId: result.id, fileName }),
+      JSON.stringify({ success: true, fileName: file.name }),
       {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       }
