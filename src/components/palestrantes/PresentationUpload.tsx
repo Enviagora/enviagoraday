@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { Upload, FileText, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
+import { Upload, FileText, CircleCheck as CheckCircle, CircleAlert as AlertCircle, Loader as Loader2 } from "lucide-react";
 
 const ACCEPTED_TYPES = [
   "application/vnd.openxmlformats-officedocument.presentationml.presentation",
