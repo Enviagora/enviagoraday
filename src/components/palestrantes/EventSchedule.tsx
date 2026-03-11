@@ -96,7 +96,7 @@ const schedule = [
   {
     time: "11:35 – 12:00",
     speaker: "Rogério Avantto",
-    theme: "Construindo audiência que vira vendas",
+    theme: "",
     duration: "25 min",
     isBreak: false,
   },
