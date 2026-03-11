@@ -26,7 +26,7 @@ const SpeakerIntro = () => (
       </p>
       <p>
         No dia <span className="text-foreground font-semibold">14 de março</span>,
-        150 pessoas estarão presentes com um objetivo em comum:{" "}
+        150 a 200 pessoas estarão presentes com um objetivo em comum:{" "}
         <span className="text-foreground font-semibold">crescer</span>. E a sua
         voz vai fazer parte disso.
       </p>
