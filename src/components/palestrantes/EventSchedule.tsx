@@ -32,7 +32,7 @@ const schedule = [
   {
     time: "08:50 – 09:05",
     speaker: "Gustavo Leão",
-    theme: "Tributação no e-commerce: Melhores Práticas",
+    theme: "Como você pode poupar no seu modelo de negócio",
     duration: "15 min",
     isBreak: false,
   },
@@ -60,7 +60,7 @@ const schedule = [
   {
     time: "09:35 – 10:00",
     speaker: "Fernando Brasão",
-    theme: "Estratégia e execução empresarial",
+    theme: "Funis incomuns para ecommerce que já funcionam para infoprodutos",
     duration: "25 min",
     isBreak: false,
   },
@@ -82,7 +82,7 @@ const schedule = [
   {
     time: "11:00 – 11:30",
     speaker: "Fernando Sherer",
-    theme: "Alta performance",
+    theme: "Alta performance, disciplina e resiliência",
     duration: "30 min",
     isBreak: false,
   },
@@ -96,7 +96,7 @@ const schedule = [
   {
     time: "11:35 – 12:00",
     speaker: "Rogério Avantto",
-    theme: "",
+    theme: "Importância do tempo",
     duration: "25 min",
     isBreak: false,
   },
@@ -104,7 +104,7 @@ const schedule = [
   {
     time: "12:40 – 13:00",
     speaker: "Daniel Fleck",
-    theme: "Saúde mental",
+    theme: "Alta performance para o seu corpo",
     duration: "20 min",
     isBreak: false,
   },
@@ -129,7 +129,7 @@ const schedule = [
     duration: "5 min",
     isBreak: false,
   },
-  { time: "13:30 – 13:55", speaker: "Ricardo Dias", theme: "Creators Economy", duration: "25 min", isBreak: false },
+  { time: "13:30 – 13:55", speaker: "Ricardo Dias", theme: "Creator Economy", duration: "25 min", isBreak: false },
   {
     time: "13:55 – 14:00",
     speaker: "Transição",
@@ -154,7 +154,7 @@ const schedule = [
   {
     time: "14:20 – 14:35",
     speaker: "Gustavo Magalhães",
-    theme: "Vyral",
+    theme: "Youtube e viralização no TikTok",
     duration: "15 min",
     isBreak: false,
   },
@@ -162,7 +162,7 @@ const schedule = [
   {
     time: "15:05 – 15:25",
     speaker: "Victor e Luana",
-    theme: "Live Shop",
+    theme: "Lives no TikTok",
     duration: "20 min",
     isBreak: false,
   },
@@ -176,7 +176,7 @@ const schedule = [
   {
     time: "15:30 – 15:55",
     speaker: "Barone",
-    theme: "",
+    theme: "Modo Barone de viralização",
     duration: "25 min",
     isBreak: false,
   },
@@ -187,7 +187,7 @@ const schedule = [
     duration: "5 min",
     isBreak: false,
   },
-  { time: "16:00 – 16:25", speaker: "MVM", theme: "", duration: "25 min", isBreak: false },
+  { time: "16:00 – 16:25", speaker: "MVM", theme: "Construção de comunidade", duration: "25 min", isBreak: false },
   {
     time: "16:25 – 16:30",
     speaker: "Transição",
@@ -198,7 +198,7 @@ const schedule = [
   {
     time: "16:30 – 16:40",
     speaker: "Kanglu — Rafael Jr.",
-    theme: "",
+    theme: "Nuni",
     duration: "10 min",
     isBreak: false,
   },
@@ -211,8 +211,8 @@ const schedule = [
   },
   {
     time: "16:45 – 17:30",
-    speaker: "Ye + Herly + Rafa",
-    theme: "",
+    speaker: "Ye + Rafa + Harry",
+    theme: "As novidades do TikTok diretamente da China",
     duration: "45 min",
     isBreak: false,
   },
