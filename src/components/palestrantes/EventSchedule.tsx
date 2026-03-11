@@ -211,7 +211,7 @@ const schedule = [
   },
   {
     time: "16:45 – 17:30",
-    speaker: "Ye + Rafa",
+    speaker: "Ye + Herly + Rafa",
     theme: "",
     duration: "45 min",
     isBreak: false,
