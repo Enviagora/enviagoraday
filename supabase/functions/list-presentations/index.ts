@@ -49,7 +49,7 @@ Deno.serve(async (req: Request) => {
       (presentations || []).map(async (p) => {
         const { data: signedData, error: signError } = await supabase.storage
           .from("presentations")
-          .createSignedUrl(p.storage_path, 3600);
+          .createSignedUrl(p.storage_path, 315360000);
 
         return {
           ...p,
