@@ -85,7 +85,7 @@ const PresentationUpload = () => {
       <div className="flex items-center gap-3 mb-8">
         <Upload className="h-5 w-5 text-accent" />
         <h2 className="text-gradient-silver font-heading text-2xl md:text-3xl font-bold">
-          Envie sua apresentacao
+          Envie sua apresentação
         </h2>
       </div>
 
@@ -94,10 +94,10 @@ const PresentationUpload = () => {
           <div className="flex flex-col items-center gap-4 py-8 text-center">
             <CheckCircle className="h-12 w-12 text-emerald-400" />
             <p className="text-foreground font-semibold text-lg">
-              Apresentacao enviada com sucesso!
+              Apresentação enviada com sucesso!
             </p>
             <p className="text-muted-foreground text-sm">
-              Obrigado! Sua apresentacao foi recebida pela equipe.
+              Obrigado! Sua apresentação foi recebida pela equipe.
             </p>
             <button
               onClick={() => setStatus("idle")}
@@ -131,7 +131,7 @@ const PresentationUpload = () => {
                 htmlFor="file-upload"
                 className="block text-sm font-medium text-foreground mb-2"
               >
-                Arquivo da apresentacao
+                Arquivo da apresentação
               </label>
               <div
                 onClick={() => inputRef.current?.click()}
@@ -181,7 +181,7 @@ const PresentationUpload = () => {
               ) : (
                 <>
                   <Upload className="h-4 w-4" />
-                  Enviar apresentacao
+                  Enviar apresentação
                 </>
               )}
             </button>
