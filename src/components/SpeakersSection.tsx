@@ -8,7 +8,6 @@ import rafaBorn from "@/assets/speakers/rafa-born-v2.png";
 import robsonGalvao from "@/assets/speakers/robson-galvao-v2.png";
 import jackAlecrim from "@/assets/speakers/jack-alecrim-v2.png";
 import luigiConstantino from "@/assets/speakers/luigi-constantino-v2.png";
-import moritzNeto from "@/assets/speakers/moritz-neto-v2.png";
 import fernandoScherer from "@/assets/speakers/xuxa-v2.png";
 import victorLuana from "@/assets/speakers/bloom-victor-luana.png";
 import diegoSantana from "@/assets/speakers/diego-santana-v2.png";
@@ -29,18 +28,17 @@ const speakers = [
   { id: 4, image: rafaBorn, name: "Rafael Born", role: "Founder Enviagora & Fleurity" },
   { id: 5, image: fernandoScherer, name: "Fernando Scherer", role: "Medalhista Olímpico & Empresário" },
   { id: 6, image: luigiConstantino, name: "Luigi Constantino", role: "Co-Founder do MVM" },
-  { id: 7, image: moritzNeto, name: "Moritz Neto", role: "CEO do Grupo Unfair Advantage" },
-  { id: 8, image: robsonGalvao, name: "Robson Galvão", role: "CEO da Gummy" },
-  { id: 9, image: rogerioAndrade, name: "Rogério Andrade", role: "CEO da Avantto" },
-  { id: 10, image: gustavoMagalhaes, name: "Gustavo Magalhães", role: "Fundador da Dreams Holding" },
-  { id: 11, image: ricardoDias, name: "Ricardo Dias", role: "Co-Fundador da Adventures Inc." },
-  { id: 12, image: edisonKwecko, name: "Edison Kwecko", role: "Fundador da Stokki" },
-  { id: 13, image: jackAlecrim, name: "Jack Alecrim", role: "Cientista em Inovação Capilar" },
-  { id: 14, image: victorLuana, name: "Victor e Luana", role: "Founders da Bloom Body e Barbours" },
-  { id: 15, image: fernandoBrasao, name: "Fernando Brasão", role: "Founder da Marketing Brasil" },
-  { id: 16, image: gustavoLeao, name: "Gustavo Leão", role: "Co-Founder da Eblue Solutions" },
-  { id: 17, image: danielFleck, name: "Daniel Fleck", role: "Naturopata e Terapeuta Vibracional" },
-  { id: 18, image: leilaOkumura, name: "Leila Okumura", role: "Naturopata e Terapeuta Vibracional" },
+  { id: 7, image: robsonGalvao, name: "Robson Galvão", role: "CEO da Gummy" },
+  { id: 8, image: rogerioAndrade, name: "Rogério Andrade", role: "CEO da Avantto" },
+  { id: 9, image: gustavoMagalhaes, name: "Gustavo Magalhães", role: "Fundador da Dreams Holding" },
+  { id: 10, image: ricardoDias, name: "Ricardo Dias", role: "Co-Fundador da Adventures Inc." },
+  { id: 11, image: edisonKwecko, name: "Edison Kwecko", role: "Fundador da Stokki" },
+  { id: 12, image: jackAlecrim, name: "Jack Alecrim", role: "Cientista em Inovação Capilar" },
+  { id: 13, image: victorLuana, name: "Victor e Luana", role: "Founders da Bloom Body e Barbours" },
+  { id: 14, image: fernandoBrasao, name: "Fernando Brasão", role: "Founder da Marketing Brasil" },
+  { id: 15, image: gustavoLeao, name: "Gustavo Leão", role: "Co-Founder da Eblue Solutions" },
+  { id: 16, image: danielFleck, name: "Daniel Fleck", role: "Naturopata e Terapeuta Vibracional" },
+  { id: 17, image: leilaOkumura, name: "Leila Okumura", role: "Naturopata e Terapeuta Vibracional" },
 ];
 
 const SpeakersSection = () => {
