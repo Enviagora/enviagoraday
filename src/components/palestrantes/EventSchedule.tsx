@@ -60,7 +60,7 @@ const schedule = [
   {
     time: "09:35 – 10:00",
     speaker: "Diego Santana",
-    theme: "Funis incomuns para ecommerce que já funcionam para infoprodutos",
+    theme: "E-commerce",
     duration: "25 min",
     isBreak: false,
   },
