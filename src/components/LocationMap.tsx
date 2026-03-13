@@ -42,15 +42,7 @@ const LocationMap = () => {
                     Abrir no Google Maps
                     <ExternalLink className="h-4 w-4" />
                   </a>
-                  <a
-                    href={`https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-silver hover:text-white transition-colors text-sm font-medium"
-                  >
-                    Traçar rota
-                    <ExternalLink className="h-4 w-4" />
-                  </a>
+               
                 </div>
               </div>
             </div>
