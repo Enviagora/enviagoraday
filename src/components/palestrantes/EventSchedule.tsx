@@ -59,7 +59,7 @@ const schedule = [
   },
   {
     time: "09:35 – 10:00",
-    speaker: "Fernando Brasão",
+    speaker: "Diego Santana",
     theme: "Funis incomuns para ecommerce que já funcionam para infoprodutos",
     duration: "25 min",
     isBreak: false,
@@ -161,7 +161,7 @@ const schedule = [
   { time: "14:35 – 15:05", speaker: "BREAK", theme: "", duration: "30 min", isBreak: true },
   {
     time: "15:05 – 15:25",
-    speaker: "Victor e Luana",
+    speaker: "Fernando Brasão",
     theme: "Lives no TikTok",
     duration: "20 min",
     isBreak: false,
