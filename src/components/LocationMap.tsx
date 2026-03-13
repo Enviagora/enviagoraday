@@ -8,7 +8,7 @@ const LocationMap = () => {
 
   return (
     <section id="localizacao" className="relative py-12 md:py-16">
-      <div className="container mx-auto px-20 md:px-6">
+      <div className="container mx-auto px-20 md:px-20">
         <AnimatedSection className="text-center mb-12 md:mb-16">
           <p className="mb-3 font-sans text-xs font-medium uppercase tracking-[0.3em] text-muted-foreground">
             Localização
