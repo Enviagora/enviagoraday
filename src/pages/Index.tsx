@@ -13,6 +13,7 @@ import Footer from "@/components/Footer";
 const Index = () => (
   <div className="bg-page-gradient min-h-screen">
     <Header />
+    <LocationMap />
     <HeroSection />
     <SpeakersSection />
     <TopicsSection />
@@ -20,7 +21,6 @@ const Index = () => (
     <SupportersSection />
     <TikTokShopSection />
     <AboutSection />
-    <LocationMap />
     <Footer />
   </div>
 );
