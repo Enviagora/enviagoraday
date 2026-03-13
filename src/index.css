@@ -140,4 +140,37 @@
   .bg-page-gradient {
     background: linear-gradient(180deg, hsl(222 47% 6%) 0%, hsl(220 30% 12%) 30%, hsl(215 20% 25%) 70%, hsl(213 27% 60%) 100%);
   }
+
+  .map-container {
+    z-index: 1;
+  }
+
+  .map-container .leaflet-control-zoom {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 0.5rem !important;
+  }
+
+  .map-container .leaflet-control-zoom-in,
+  .map-container .leaflet-control-zoom-out {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #c0a080 !important;
+    border: none !important;
+  }
+
+  .map-container .leaflet-control-zoom-in:hover,
+  .map-container .leaflet-control-zoom-out:hover {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+  }
+
+  .map-container .leaflet-popup-content-wrapper {
+    background-color: rgba(30, 41, 59, 0.95) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 0.5rem !important;
+    color: #f1f5f9 !important;
+  }
+
+  .map-container .leaflet-popup-tip {
+    background-color: rgba(30, 41, 59, 0.95) !important;
+  }
 }

@@ -1,10 +1,47 @@
 import AnimatedSection from "./AnimatedSection";
 import { MapPin, ExternalLink } from "lucide-react";
+import { useEffect, useRef } from "react";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
 
 const LocationMap = () => {
-  const address = "Av. Olavo Fontoura, 1078 - Santana, São Paulo - SP, 02012-021";
-  const latitude = -23.50861;
-  const longitude = -46.62436;
+  const address = "Av. Olavo Fontoura, 780 - Santana, São Paulo - SP, 02012-000";
+  const latitude = -23.508611;
+  const longitude = -46.624361;
+  const mapRef = useRef<L.Map | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!containerRef.current || mapRef.current) return;
+
+    const map = L.map(containerRef.current).setView([latitude, longitude], 15);
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "© OpenStreetMap contributors",
+      maxZoom: 19,
+    }).addTo(map);
+
+    const customIcon = L.icon({
+      iconUrl: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23c0a080' width='32' height='32'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12c0 4.08 2.64 7.58 6.36 9.12.48.12.72 0 .84-.36.12-.36.72-2.88.84-3.36.12-.36 0-.6-.24-.84-.6-.48-1.08-1.08-1.08-2.04 0-3 2.52-5.52 5.28-5.52s5.28 2.52 5.28 5.52c0 .96-.48 1.56-1.08 2.04-.24.24-.36.48-.24.84.12.48.36 3 .84 3.36.12.36.36.48.84.36C19.36 19.58 22 16.08 22 12c0-5.52-4.48-10-10-10zm0 17c-3.84 0-7-3.12-7-7 0-3.84 3.12-7 7-7s7 3.12 7 7c0 3.84-3.12 7-7 7z'/%3E%3C/svg%3E",
+      iconSize: [32, 32],
+      iconAnchor: [16, 32],
+      popupAnchor: [0, -32],
+    });
+
+    L.marker([latitude, longitude], { icon: customIcon })
+      .addTo(map)
+      .bindPopup(
+        `<div class="font-semibold text-sm">${address}</div>`,
+        { maxWidth: 200 }
+      );
+
+    mapRef.current = map;
+
+    return () => {
+      map.remove();
+      mapRef.current = null;
+    };
+  }, []);
 
   return (
     <section id="localizacao" className="relative py-24 md:py-32">
@@ -59,29 +96,11 @@ const LocationMap = () => {
               </div>
             </div>
 
-            <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-gradient-to-br from-white/5 to-white/10 p-8">
-              <a
-                href={`https://www.google.com/maps?q=${latitude},${longitude}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block h-[300px] md:h-[400px] bg-gradient-to-br from-slate-800 to-slate-900 rounded-lg overflow-hidden hover:opacity-90 transition-opacity relative group"
-              >
-                <img
-                  src={`https://maps.googleapis.com/maps/api/staticmap?center=${latitude},${longitude}&zoom=15&size=600x400&markers=color:0x9CA3AF|${latitude},${longitude}&key=AIzaSyDummyKeyForPreview`}
-                  alt="Localização do evento"
-                  className="w-full h-full object-cover opacity-50"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).style.display = 'none';
-                  }}
-                />
-                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-slate-800/80 to-slate-900/80 group-hover:from-slate-800/70 group-hover:to-slate-900/70 transition-all">
-                  <div className="text-center">
-                    <MapPin className="h-12 w-12 text-silver mx-auto mb-3" />
-                    <p className="text-white font-semibold">Ver no Google Maps</p>
-                    <p className="text-silver text-sm mt-2">Clique para abrir</p>
-                  </div>
-                </div>
-              </a>
+            <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+              <div
+                ref={containerRef}
+                className="h-[300px] md:h-[400px] bg-slate-900 map-container"
+              />
             </div>
           </div>
         </AnimatedSection>
