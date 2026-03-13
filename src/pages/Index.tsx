@@ -3,7 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import SpeakersSection from "@/components/SpeakersSection";
 import { TopicsSection } from "@/components/TopicsSection";
-import ApplicationForm from "@/components/ApplicationForm";
+import LocationMap from "@/components/LocationMap";
 import SponsorsSection from "@/components/SponsorsSection";
 import SupportersSection from "@/components/SupportersSection";
 import TikTokShopSection from "@/components/TikTokShopSection";
@@ -20,7 +20,7 @@ const Index = () => (
     <SupportersSection />
     <TikTokShopSection />
     <AboutSection />
-    <ApplicationForm />
+    <LocationMap />
     <Footer />
   </div>
 );
