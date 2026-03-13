@@ -1,9 +1,10 @@
 import AnimatedSection from "./AnimatedSection";
-import { MapPin } from "lucide-react";
+import { MapPin, ExternalLink } from "lucide-react";
 
 const LocationMap = () => {
   const address = "Av. Olavo Fontoura, 1078 - Santana, São Paulo - SP, 02012-021";
-  const googleMapsUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3730.7534788849373!2d-46.62436!3d-23.50861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce658e0d1bd9ad%3A0x3f23e0f6f6f6f6f6!2sAv.%20Olavo%20Fontoura%2C%201078%20-%20Santana%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2002012-021!5e0!3m2!1spt-BR!2sbr!4v1234567890";
+  const latitude = -23.50861;
+  const longitude = -46.62436;
 
   return (
     <section id="localizacao" className="relative py-24 md:py-32">
@@ -27,37 +28,60 @@ const LocationMap = () => {
                     <MapPin className="h-6 w-6 text-gradient-silver mt-1" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-foreground mb-2">
+                    <h3 className="text-lg font-semibold text-foreground mb-3">
                       Endereço do Evento
                     </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                       {address}
                     </p>
-                    <a
-                      href={`https://www.google.com/maps/search/${encodeURIComponent(address)}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 mt-4 text-silver hover:text-white transition-colors text-sm font-medium"
-                    >
-                      Ver no Google Maps
-                      <span>→</span>
-                    </a>
+                    <div className="flex flex-col gap-2">
+                      <a
+                        href={`https://www.google.com/maps?q=${latitude},${longitude}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-silver hover:text-white transition-colors text-sm font-medium"
+                      >
+                        Abrir no Google Maps
+                        <ExternalLink className="h-4 w-4" />
+                      </a>
+                      <a
+                        href={`https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-silver hover:text-white transition-colors text-sm font-medium"
+                      >
+                        Traçar rota
+                        <ExternalLink className="h-4 w-4" />
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-              <iframe
-                src={googleMapsUrl}
-                width="100%"
-                height="400"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="w-full h-[300px] md:h-[400px]"
-              />
+            <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-gradient-to-br from-white/5 to-white/10 p-8">
+              <a
+                href={`https://www.google.com/maps?q=${latitude},${longitude}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block h-[300px] md:h-[400px] bg-gradient-to-br from-slate-800 to-slate-900 rounded-lg overflow-hidden hover:opacity-90 transition-opacity relative group"
+              >
+                <img
+                  src={`https://maps.googleapis.com/maps/api/staticmap?center=${latitude},${longitude}&zoom=15&size=600x400&markers=color:0x9CA3AF|${latitude},${longitude}&key=AIzaSyDummyKeyForPreview`}
+                  alt="Localização do evento"
+                  className="w-full h-full object-cover opacity-50"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.display = 'none';
+                  }}
+                />
+                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-slate-800/80 to-slate-900/80 group-hover:from-slate-800/70 group-hover:to-slate-900/70 transition-all">
+                  <div className="text-center">
+                    <MapPin className="h-12 w-12 text-silver mx-auto mb-3" />
+                    <p className="text-white font-semibold">Ver no Google Maps</p>
+                    <p className="text-silver text-sm mt-2">Clique para abrir</p>
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
         </AnimatedSection>
