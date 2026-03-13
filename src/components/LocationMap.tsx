@@ -34,7 +34,7 @@ const LocationMap = () => {
                 </p>
                 <div className="flex flex-col gap-2">
                   <a
-                    href={`https://www.google.com/maps?q=${latitude},${longitude}`}
+                    href={`https://www.google.com/maps/place/Av.+Olavo+Fontoura,+780+-+Santana,+São+Paulo+-+SP,+02012-000/@-23.5142352,-46.6388393,183m/data=!3m1!1e3!4m6!3m5!1s0x94ce58792d8bc8bf:0xf93c1d7dfa84df4a!8m2!3d-23.5138804!4d-46.636926!16s%2Fg%2F11bw42jv15?entry=ttu&g_ep=EgoyMDI2MDMxMS4wIKXMDSoASAFQAw%3D%3D`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-silver hover:text-white transition-colors text-sm font-medium"
