@@ -7,7 +7,7 @@ const LocationMap = () => {
   const longitude = -46.624361;
 
   return (
-    <section id="localizacao" className="relative py-12 md:py-16">
+    <section id="localizacao" className="relative pt-40 md:pt-60 pb-12 md:pb-16">
       <div className="container mx-auto px-20 md:px-20">
         <AnimatedSection className="text-center mb-12 md:mb-16">
           <p className="mb-3 font-sans text-xs font-medium uppercase tracking-[0.3em] text-muted-foreground">
